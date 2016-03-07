@@ -15,3 +15,7 @@ What we need to implement:
 * JavaScript
 * Database
 * API
+
+
+Notes:
+Link to move div and assign position to css: https://www.youtube.com/watch?v=NT-c2AFM6T0
