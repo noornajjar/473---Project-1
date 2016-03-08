@@ -35,28 +35,32 @@ of those sections to manage the look and feel of the site. */
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #fff;
+    background-image: url("bg.jpg");
+
 }
 
 .about-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #eee;
+    background-image: url("cool-gradient.jpg");
 }
 
 .services-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #fff;
+    background-image: url("gradient.jpg");
+
 }
 
 .contact-section {
     height: 100%;
     padding-top: 150px;
+    color: lightgray;
     text-align: center;
-    background: #eee;
+    background-image: url("gradient-lines.jpg");
+
 }
 
 /*Footer Contact*/
