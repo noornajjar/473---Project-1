@@ -17,6 +17,7 @@
   <!-- Custom CSS -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
 
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -62,21 +63,40 @@
         </ul>
 
         <div class="container">
-	<div class="row">
-        <div class="search">
-<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
- <button type="submit" class="btn btn-primary btn-sm">Search</button>
-</div>
-<div class="col-xs-1 pull-right">
-  <div class="btn btn-default navbar-btn navbar-right">Log In</div>
-</div>
-<div class="col-xs-1 pull-right">
+            <div class="row">
+                <div class="col-xs-6">
+        		    <div class="input-group">
+                        <div class="input-group-btn search-panel">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            	<span id="search_concept">Filter by</span> <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                              <li><a href="#contains">Contains</a></li>
+                              <li><a href="#its_equal">It's equal</a></li>
+                              <li><a href="#greather_than">Greather than ></a></li>
+                              <li><a href="#less_than">Less than < </a></li>
+                              <li class="divider"></li>
+                              <li><a href="#all">Anything</a></li>
+                            </ul>
+                        </div>
+                        <input type="hidden" name="search_param" value="all" id="search_param">
+                        <input type="text" class="form-control" name="x" placeholder="Search term...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
 
-  <div class="btn btn-primary navbar-btn navbar-right">Sign Up</div>
-</div>
-	</div>
-</div>
+              <div class="col-xs-1 pull-right">
 
+                <div class="btn btn-primary navbar-btn navbar-right">Sign Up</div>
+              </div>
+              <div class="col-xs-1 pull-right">
+
+              <div class="btn btn-default navbar-btn navbar-right">Log In</div>
+            </div>
+        	</div>
+        </div>
 
 
       </div>
@@ -146,14 +166,14 @@
                     <h5 class="title"><span>Main Navigation</span></h5>
                     <div class="menu-main-menu-container">
                       <ul class="nav nav-footer" id="menu-main-menu-1">
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-14 current_page_item menu-item-16"><a href="http://localhost/wpJoinRedHawk/">Home</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-14 current_page_item menu-item-16"><a href="#">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
                         <li><a href="#">Service Support Model</a></li>
                         <li><a href="#">Payouts And Fees</a></li>
                         <li><a href="#">Practice Models</a></li>
-                        <li><a href="#">Services</a></li>
+                        <li><a href="#services">Services</a></li>
                         <li><a href="#">Join With Us</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
                       </ul>
                     </div>
                   </div>
@@ -161,9 +181,9 @@
                     <h5 class="title"><span>Site map</span></h5>
                     <div class="menu-footer-sitemap-container">
                       <ul class="nav nav-footer" id="menu-footer-sitemap">
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87" id="menu-item-87"><a href="http://localhost/wpJoinRedHawk/?page_id=82">Payouts And Fees</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87" id="menu-item-87"><a href="#">Payouts And Fees</a></li>
                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88" id="menu-item-88"><a href="#">Service Support Model</a></li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89" id="menu-item-89"><a href="#">About Us</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89" id="menu-item-89"><a href="#about">About Us</a></li>
                       </ul>
                     </div>
                   </div>
@@ -209,6 +229,7 @@
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/scrolling-nav.js"></script>
   <script src="js/search.js"></script>
+
 
 </body>
 
