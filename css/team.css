@@ -12,7 +12,7 @@ h3.description{
   align-items: center;
   color: lightgray;
   text-align: center;
-	border-bottom: 1px solid rgba(0, 0, 0,0.1);
+	border-bottom: 1px solid rgba(192, 192, 192,0.3);
 	padding-bottom: 5px;
 }
 .profile{
@@ -22,18 +22,21 @@ h3.description{
 	font-weight: bold;
   color: lightgray;
 	font-size: 20px;
+  text-align: left justify;
 	margin:10px 0 0 0;
 }
 .profile h2{
-	font-size: 16px;
+	font-size: 18px;
+  text-decoration: underline;
   color: lightgray;
-	font-weight: normal;
-	margin-top: 5px;
+	font-weight: bolder;
+	margin-top: 10px;
 }
 .profile p{
 	font-size: 14px;
   color: lightgray;
 	font-weight: normal;
+  text-align: left justify;
 	margin-top: 5px;
 }
 
