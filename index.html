@@ -10,9 +10,7 @@
   <meta name="author" content="">
 
   <title>My.Info</title>
-  <link rel="icon"
-      type="image/png"
-      href="css/unnamed.png">
+  <link rel="icon" type="image/png" href="css/unnamed.png">
 
   <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -68,7 +66,7 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-xs-6">
+            <div class="col-xs-12 col-sm-5 navbar-right">
               <div class="input-group">
                 <div class="input-group-btn search-panel">
                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -90,15 +88,50 @@
                 </span>
               </div>
             </div>
-
-            <div class="col-xs-1 pull-right">
-
-              <div class="btn btn-primary navbar-btn navbar-right">Sign Up</div>
-            </div>
-            <div class="col-xs-1 pull-right">
-
-              <div class="btn btn-default navbar-btn navbar-right">Log In</div>
-            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <p class="navbar-text">Already have an account?</p>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                <ul id="login-dp" class="dropdown-menu">
+                  <li>
+                    <div class="row">
+                      <div class="col-md-12">
+                        Login via
+                        <div class="social-buttons">
+                          <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                          <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                        </div>
+                        or
+                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                          <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="sr-only" for="exampleInputPassword2">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                            <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                          </div>
+                          <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"> keep me logged-in
+                            </label>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="bottom text-center">
+                        New here ? <a href="#"><b>Join Us</b></a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
 
