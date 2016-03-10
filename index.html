@@ -10,12 +10,15 @@
   <meta name="author" content="">
 
   <title>My.Info</title>
+  <link rel="icon" type="image/png" href="css/unnamed.png">
 
   <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
+  <link href="css/team.css" rel="stylesheet">
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,7 +34,7 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header page-scroll">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -59,20 +62,80 @@
           <li>
             <a class="page-scroll" href="#contact">Contact</a>
           </li>
-
         </ul>
-      <div class="col-md-8">
-        <div class="btn btn-primary navbar-btn navbar-right">Sign Up</div>
 
-  <div class="col-md-8">
-                                <div class="btn btn-default navbar-btn navbar-right">Log In</div>
-
-
-                            </div>
-
-
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-5 navbar-right">
+              <div class="input-group">
+                <div class="input-group-btn search-panel">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span id="search_concept">Filter by</span> <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#contains">Contains</a></li>
+                    <li><a href="#its_equal">It's equal</a></li>
+                    <li><a href="#greather_than">Greather than ></a></li>
+                    <li><a href="#less_than">Less than < </a></li>
+                    <li class="divider"></li>
+                    <li><a href="#all">Anything</a></li>
+                  </ul>
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">
+                <input type="text" class="form-control" name="x" placeholder="Search Business...">
+                <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+              </div>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <p class="navbar-text">Already have an account?</p>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                <ul id="login-dp" class="dropdown-menu">
+                  <li>
+                    <div class="row">
+                      <div class="col-md-12">
+                        Login via
+                        <div class="social-buttons">
+                          <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                          <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                        </div>
+                        or
+                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                          <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
                           </div>
-</div>
+                          <div class="form-group">
+                            <label class="sr-only" for="exampleInputPassword2">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                            <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                          </div>
+                          <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"> keep me logged-in
+                            </label>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="bottom text-center">
+                        New here ? <a href="#"><b>Join Us</b></a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
       </div>
       <!-- /.navbar-collapse -->
     </div>
@@ -124,6 +187,221 @@
     </div>
   </section>
 
+  <!-- Team Section -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <section class="team">
+    <div class="container">
+
+      <h3 class="description">OUR TEAM</h3>
+      <div class="row pt-md">
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
+          <div class="img-box">
+            <img src="css/female.jpg" class="img-responsive img-circle">
+            <ul class="text-center">
+              <a href="#">
+                <li><i class="fa fa-facebook"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-twitter"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-linkedin"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-github"></i></li>
+              </a>
+            </ul>
+          </div>
+          <h1>Van Leslie Nguyen</h1>
+          <h2>Developer</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
+          <div class="img-box">
+            <img src="css/female.jpg" class="img-responsive img-circle">
+            <ul class="text-center">
+              <a href="#">
+                <li><i class="fa fa-facebook"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-twitter"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-linkedin"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-github"></i></li>
+              </a>
+            </ul>
+          </div>
+          <h1>Noor Najjar</h1>
+          <h2>Developer</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
+          <div class="img-box">
+            <img src="css/female.jpg" class="img-responsive img-circle">
+            <ul class="text-center">
+              <a href="#">
+                <li><i class="fa fa-facebook"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-twitter"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-linkedin"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-github"></i></li>
+              </a>
+            </ul>
+          </div>
+          <h1>Megan Allena Bond</h1>
+          <h2>Developer</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
+          <div class="img-box">
+            <img src="css/female.jpg" class="img-responsive img-circle">
+            <ul class="text-center">
+              <a href="#">
+                <li><i class="fa fa-facebook"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-twitter"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-linkedin"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-github"></i></li>
+              </a>
+            </ul>
+          </div>
+          <h1>Sha Lu</h1>
+          <h2>Developer</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
+          <div class="img-box">
+            <img src="css/male.jpg" class="img-responsive img-circle">
+            <ul class="text-center">
+              <a href="#">
+                <li><i class="fa fa-facebook"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-twitter"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-linkedin"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-github"></i></li>
+              </a>
+            </ul>
+          </div>
+          <h1>Uday Chandrakant Shah</h1>
+          <h2>Developer</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
+          <div class="img-box">
+            <img src="css/male.jpg" class="img-responsive img-circle">
+            <ul class="text-center">
+              <a href="https://www.facebook.com/ammar.y.alee" target="_blank">
+                <li><i class="fa fa-facebook"></i></li>
+              </a>
+              <a href="https://twitter.com/Ammar_Yasir_Ali" target="_blank">
+                <li><i class="fa fa-twitter"></i></li>
+              </a>
+              <a href="https://www.linkedin.com/in/ammaryalee" target="_blank">
+                <li><i class="fa fa-linkedin"></i></li>
+              </a>
+              <a href="https://github.com/ammaralee/" target="_blank">
+                <li><i class="fa fa-github"></i></li>
+              </a>
+            </ul>
+          </div>
+          <h1>Ammar Yasir Ali</h1>
+          <h2>Developer</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer role="contentinfo" class="site-footer" id="colophon">
+    <div class="container">
+      <div class="row">
+        <div id="accordion" class="collapse-footer">
+          <div class="panel">
+            <div class="panel-heading">
+              <h4 class="panel-title"> <a href="#collapseOne" data-parent="#accordion" data-toggle="collapse" class="collapsed"> <i class="fa fa-chevron-down" style="color:white"></i></a> </h4>
+            </div>
+            <div class="panel-collapse collapse" id="collapseOne" style="height:0px;">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <h5 class="title"><span>Main Navigation</span></h5>
+                    <div class="menu-main-menu-container">
+                      <ul class="nav nav-footer" id="menu-main-menu-1">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-14 current_page_item menu-item-16"><a href="#">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Students</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Join With Us</a></li>
+                        <li><a href="#">Help</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <h5 class="title"><span>Site map</span></h5>
+                    <div class="menu-footer-sitemap-container">
+                      <ul class="nav nav-footer" id="menu-footer-sitemap">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87" id="menu-item-87"><a href="#">FAQ</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88" id="menu-item-88"><a href="#">Support</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89" id="menu-item-89"><a href="#">Advertising</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3  col-sm-6">
+                    <h5 class="title"><span>Don't hesitate to contact us!</span></h5>
+                    <p> Please give us time to let <strong>Team "Bidirectional Broadcasters"</strong> know about any problems or suggestions what you have.</p>
+                    <div class="clear"> </div>
+                    <a class="btn btn-default btn-sm" href="#contact">Contact with us</a> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+      <div class="container">
+        <div class="row copyright-img">
+          <div class="col-lg-4 col-sm-4"> Total Control True Independence </div>
+          <div class="col-lg-8 col-sm-8 text-right" id="footertext"> Copyright © 2016 Team "Bidirectional Broadcasters" </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Copyright -->
+
+
+  </footer>
+  <!-- /footer -->
+
+
+  <a id="back-to-top" href="#" class="btn btn-primary btn-sm back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+
   <!-- jQuery -->
   <script src="js/jquery.js"></script>
 
@@ -133,6 +411,8 @@
   <!-- Scrolling Nav JavaScript -->
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/scrolling-nav.js"></script>
+  <script src="js/search.js"></script>
+
 
 </body>
 

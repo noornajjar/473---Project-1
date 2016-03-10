@@ -35,26 +35,236 @@ of those sections to manage the look and feel of the site. */
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #fff;
+    background-repeat: no-repeat;
+    background-image: url("bg.jpg");
+
 }
 
 .about-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #eee;
+    background-image: url("cool-gradient.jpg");
 }
 
 .services-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #fff;
+    background-image: url("gradient.jpg");
+
 }
 
 .contact-section {
     height: 100%;
     padding-top: 150px;
+    color: lightgray;
     text-align: center;
-    background: #eee;
+    background-image: url("gradient-lines.jpg");
+
+}
+
+/*Footer Contact*/
+.footer-contact{
+    background:#2c2c2c;
+	padding:20px 0;
+	color:#a8a8a8;
+}
+.footer-contact h3, .footer-contact p{color:#a8a8a8;}
+.footer-contact .title{ border-bottom: 1px solid #000;}
+.footer-contact ul{list-style:none;}
+.footer-contact ul li{
+	line-height:24px;
+}
+.footer-contact ul li .glyphicon{font-size: 10px; top: 0;}
+
+
+/*Footer CSS*/
+
+footer {
+	background:#b1b0b0;
+}
+footer .panel {
+	box-shadow: none;
+}
+.collapse-footer {}
+.collapse-footer p {
+	font-size:14px;
+	line-height:normal;
+}
+.collapse-footer .panel {
+	background:none;
+	background-color:transparent;
+	border-radius:0;
+	margin-bottom:0;
+	border: none;
+}
+.collapse-footer .panel-heading {
+	background-color:#707070;
+	color:#231f20;
+	border-radius:0;
+}
+.collapse-footer .nav-footer {
+	padding:0;
+	color:#312424;
+	margin-left: 0;
+}
+.collapse-footer .nav-footer li {
+	list-style:none;
+}
+.collapse-footer h5.title {
+	border-bottom:1px #c4c4c4 solid;
+	padding-bottom:0;
+	font-size:18px;
+	font-weight:bold;
+	padding-bottom:6px;
+	margin-top:4px;
+	margin-bottom:4px;
+}
+.collapse-footer h5.title span {
+	border-bottom:3px #312424 solid;
+	bottom:1px;
+	padding-bottom:4px;
+}
+.collapse-footer .col-lg-6 .nav-footer li {
+	width:45%;
+	margin-right:5%;
+	float:left;
+}
+.collapse-footer .nav-footer li {
+
+}
+.collapse-footer .nav-footer li a {
+	color:#312424;
+	font-size:14px;
+	line-height:18px;
+	padding:5px 0;
+	display:inherit;
+}
+.collapse-footer .nav-footer li a:hover  {
+	background:none;
+	background-color:transparent;
+	color:#000;
+}
+
+
+
+/*footer Subscribe*/
+#subscribe {
+    float: right;
+    margin-top: 9px;
+    width: 250px;
+}
+
+.subscribe {
+    width: 100%;
+    position: relative;
+    float: left;
+    line-height: 22px;
+	border:1px #312424 solid;
+	border-radius:3px;
+	padding:3px;
+}
+
+.subscribe button.btn {
+	float:right;
+	z-index:999;
+	position:relative;
+	background-color:#312424;
+	border:none;
+	box-shadow:none !important;
+	text-shadow:none;
+}
+.subscribe input[type="text"] {
+	position: absolute;
+	width: 65%;
+	float: Left;
+	margin-left: 0;
+	height: 30px;
+	line-height: 18px;
+	padding: 0 2px 0 26px;
+	border-radius:1px;
+	border:none;
+	box-shadow:none !important;
+	text-shadow:none;
+	z-index:0;
+	background:none;
+	background-color:transparent;
+	background-position:8px 10px;
+	background-repeat:no-repeat;
+}
+
+.subscribe:hover input, .subscribe input:focus {
+	width: 100%;
+	margin-left: 0px;
+}
+
+/*Copyrights CSS*/
+.copyright{background:#2c2c2c; padding:0 20px; color:#b1b0b0; font-size:12px;}
+.copyright-img{padding:20px 0;}
+
+/* Scroll Up Button */
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
+}
+.input-group{
+
+  margin-top: 10px;
+}
+
+/* Login */
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:white;
+}
+#login-dp .help-block{
+    font-size:12px
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
 }
