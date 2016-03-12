@@ -8,12 +8,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="icon" type="image/png" href="img/unnamed.png">
+  <title>Simply.Me</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-  <title>My.Info</title>
-  <link rel="icon" type="image/png" href="css/unnamed.png">
+
+  <script src="http://uguru-realestate-us-jun202013.businesscatalyst.com/3d-slider/sliderengine/jquery.js"></script>
+  <script src="http://uguru-realestate-us-jun202013.businesscatalyst.com/3d-slider/sliderengine/amazingslider.js"></script>
+  <script src="http://uguru-realestate-us-jun202013.businesscatalyst.com/3d-slider/sliderengine/initslider-1.js"></script>
 
   <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-social.css" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
@@ -43,7 +49,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand page-scroll" href="#page-top">My.Info</a>
+        <a class="navbar-brand page-scroll" href="#page-top">Simply.Me</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -104,7 +110,7 @@
                           <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
                         </div>
                         or
-                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                        <form class="form" role="form" method="post" action="login.html" accept-charset="UTF-8" id="login-nav">
                           <div class="form-group">
                             <label class="sr-only" for="exampleInputEmail2">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
@@ -144,11 +150,48 @@
 
   <!-- Intro Section -->
   <section id="intro" class="intro-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1>Scrolling Nav</h1>
-          <a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a>
+    <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="3000" id="bs-carousel">
+      <!-- Overlay -->
+      <div class="overlay"></div>
+
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#bs-carousel" data-slide-to="1"></li>
+        <li data-target="#bs-carousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item slides active">
+          <div class="slide-1"></div>
+          <div class="hero">
+            <hgroup>
+              <h1>Join the Givingest</h1>
+              <h3>Get start your next awesome project</h3>
+            </hgroup>
+            <button class="btn btn-hero btn-lg" role="button">See all features</button>
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-2"></div>
+          <div class="hero">
+            <hgroup>
+              <h1>We are smart</h1>
+              <h3>Get start your next awesome project</h3>
+            </hgroup>
+            <button class="btn btn-hero btn-lg" role="button">See all features</button>
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-3"></div>
+          <div class="hero">
+            <hgroup>
+              <h1>We are amazing</h1>
+              <h3>Get start your next awesome project</h3>
+            </hgroup>
+            <button class="btn btn-hero btn-lg" role="button">See all features</button>
+          </div>
         </div>
       </div>
     </div>
@@ -157,20 +200,234 @@
   <!-- About Section -->
   <section id="about" class="about-section">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1>About Section</h1>
+      <div class="section_header">
+        <h1>Breath-taking Inspirations</h1>
+        <br>
+        <div class="container">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+
+              <div class="item active">
+                <img src="img/flex1 copy.jpg">
+                <div class="carousel-caption">
+                  <h4><a href="#">Lorem ipsum dolor sit amet consetetur sadipscing</a></h4>
+                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                </div>
+              </div>
+              <!-- End Item -->
+
+              <div class="item">
+                <img src="img/flex2 copy.jpg">
+                <div class="carousel-caption">
+                  <h4><a href="#">Consetetur sadipscing elitr, sed diam nonumy eirmod</a></h4>
+                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                </div>
+              </div>
+              <!-- End Item -->
+
+              <div class="item">
+                <img src="img/flex3 copy.jpg">
+                <div class="carousel-caption">
+                  <h4><a href="#">Tempor invidunt ut labore et dolore</a></h4>
+                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                </div>
+              </div>
+              <!-- End Item -->
+
+              <div class="item">
+                <img src="img/flex5.jpg">
+                <div class="carousel-caption">
+                  <h4><a href="#">Magna aliquyam erat, sed diam voluptua</a></h4>
+                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                </div>
+              </div>
+              <!-- End Item -->
+
+              <div class="item">
+                <img src="img/flex4.png">
+                <div class="carousel-caption">
+                  <h4><a href="#">Tempor invidunt ut labore et dolore magna aliquyam erat</a></h4>
+                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+                </div>
+              </div>
+              <!-- End Item -->
+
+            </div>
+            <!-- End Carousel Inner -->
+
+
+            <ul class="list-group col-sm-4">
+              <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active">
+                <h4>Lorem ipsum dolor sit amet consetetur sadipscing</h4></li>
+              <li data-target="#myCarousel" data-slide-to="1" class="list-group-item">
+                <h4>Consetetur sadipscing elitr, sed diam nonumy eirmod</h4></li>
+              <li data-target="#myCarousel" data-slide-to="2" class="list-group-item">
+                <h4>Tempor invidunt ut labore et dolore</h4></li>
+              <li data-target="#myCarousel" data-slide-to="3" class="list-group-item">
+                <h4>Magna aliquyam erat, sed diam voluptua</h4></li>
+              <li data-target="#myCarousel" data-slide-to="4" class="list-group-item">
+                <h4>Tempor invidunt ut labore et dolore magna aliquyam erat</h4></li>
+            </ul>
+
+            <!-- Controls -->
+            <div class="carousel-controls">
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            </div>
+
+          </div>
+          <!-- End Carousel -->
         </div>
       </div>
-    </div>
   </section>
 
   <!-- Services Section -->
   <section id="services" class="services-section">
     <div class="container">
+      <h3 class="description">Simply.Me... It is just for YOU..</h3>
+      <br>
       <div class="row">
-        <div class="col-lg-12">
-          <h1>Services Section</h1>
+        <div class="col-sm-6 col-md-3">
+          <div class="panel panel-default panel-card">
+            <div class="panel-heading">
+              <img src="img/background1.jpg" />
+              <button class="btn btn-primary btn-sm" role="button">Follow</button>
+            </div>
+            <div class="panel-figure">
+              <img class="img-responsive img-circle" src="img/profile1.jpeg" />
+            </div>
+            <div class="panel-body text-center">
+              <h4 class="panel-header"><a href="https://twitter.com/">@LoremIpsum</a></h4>
+              <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+            </div>
+            <div class="panel-thumbnails">
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="thumbnail">
+                    <img src="http://placemi.com/deqvy/60x60" />
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="thumbnail">
+                    <img src="http://placemi.com/oa2nk/60x60" />
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="thumbnail">
+                    <img src="http://placemi.com/gkkxs/60x60" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="panel panel-default panel-card">
+            <div class="panel-heading">
+              <img src="img/background2.jpg" />
+              <button class="btn btn-primary btn-sm" role="button">Follow</button>
+            </div>
+            <div class="panel-figure">
+              <img class="img-responsive img-circle" src="img/profile2.jpg" />
+            </div>
+            <div class="panel-body text-center">
+              <h4 class="panel-header"><a href="https://twitter.com/">@LoremIpsum</a></h4>
+              <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+            </div>
+            <div class="panel-thumbnails">
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="thumbnail">
+                    <img src="http://placemi.com/wpcth/60x60" />
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="thumbnail">
+                    <img src="http://placemi.com/lakvi/60x60" />
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="thumbnail">
+                    <img src="http://placemi.com/zmcwf/60x60" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="panel panel-default panel-card">
+            <div class="panel-heading">
+              <img src="img/background3.png" />
+              <button class="btn btn-primary btn-sm" role="button">Follow</button>
+            </div>
+            <div class="panel-figure">
+              <img class="img-responsive img-circle" src="img/profile3.jpg" />
+            </div>
+            <div class="panel-body text-center">
+              <h4 class="panel-header"><a href="https://twitter.com/">@LoremIpsum</a></h4>
+              <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+            </div>
+            <div class="panel-thumbnails">
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="thumbnail">
+                    <img src="http://placemi.com/xhu4d/60x60" />
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="thumbnail">
+                    <img src="http://placemi.com/1ijtv/60x60" />
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="thumbnail">
+                    <img src="http://placemi.com/oaix1/60x60" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="panel panel-default panel-card">
+            <div class="panel-heading">
+              <img src="img/background4.jpg" />
+              <button class="btn btn-primary btn-sm" role="button">Follow</button>
+            </div>
+            <div class="panel-figure">
+              <img class="img-responsive img-circle" src="img/profile4.jpeg" />
+            </div>
+            <div class="panel-body text-center">
+              <h4 class="panel-header"><a href="https://twitter.com/">@LoremIpsum</a></h4>
+              <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+            </div>
+            <div class="panel-thumbnails">
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="thumbnail">
+                    <img src="http://placemi.com/bg53j/60x60" />
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="thumbnail">
+                    <img src="http://placemi.com/6u1ao/60x60" />
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="thumbnail">
+                    <img src="http://placemi.com/sxqtg/60x60" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -178,18 +435,55 @@
 
   <!-- Contact Section -->
   <section id="contact" class="contact-section">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
-          <h1>Contact Section</h1>
+        <h3 class="description">Sign up now</h3>
+        <div class="col-sm-offset-4 col-sm-4 text-center">
+          <div class="row">
+            <div class="col-xs-4 col-sm-2 col-md-4 col-lg-6 text-center">
+              <a class="btn btn-block btn-social btn-twitter">
+                <span class="fa fa-twitter"></span>Twitter </a>
+
+              <a class="btn btn-block btn-social btn-facebook">
+                <span class="fa fa-facebook"></span>Facebook </a>
+            </div>
+            <div class="row">
+              <div class="col-xs-4 col-sm-2 col-md-4 col-lg-6 text-center">
+
+                <a class="btn btn-block btn-social btn-google">
+                  <span class="fa fa-google"></span>Google </a>
+
+                <a class="btn btn-block btn-social btn-github">
+                  <span class="fa fa-github"></span>GitHub </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
   </section>
 
   <!-- Team Section -->
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <section class="team">
     <div class="container">
 
@@ -412,7 +706,6 @@
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/scrolling-nav.js"></script>
   <script src="js/search.js"></script>
-
 
 </body>
 

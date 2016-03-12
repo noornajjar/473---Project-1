@@ -1,32 +1,47 @@
-/* jshint browser: true, jquery: true, curly: true, eqeqeq: true, forin: true, immed: true, indent: 4, latedef: true, newcap: true, nonew: true, quotmark: double, strict: true, undef: true, unused: true */
-// Client-side code
-$(document).ready(function(){
-    "use strict";
-    var searchKey ;
-    $("#submit").click(function(){
-        window.log("click");
-        $("#results").empty();
-        searchKey = $("#key").val();
-        var myApi = "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" + searchKey + "&callback=searchTerm";
-        $(function () {
-            $.ajax({
-                url: myApi,
-                type: "GET",
-                dataType: "jsonp",
-                jsonp: "searchTerm",
-                async: "true",
-                success: function () {
-                    window.alert("success");
-                }
-            });
-        });
+
+
+function onsubmit() {
+
+    var email = document.getElementById('exampleInputEmail2');
+    var pwd = document.getElementById('exampleInputPassword2');
+
+    if (email === 'admin@xyz.com' && pwd === 'admin') {
+    self.location('login.html');
+ }
+}
+
+
+$(function() {
+    $('.panel-image img.panel-image-preview').on('click', function(e) {
+	    $(this).closest('.panel-image').toggleClass('hide-panel-body');
     });
 });
-// function searchTerm(data) {
-//     "use strict";
-//     $("#results").append("<ul class='list-group'>");
-//     $.each(data.responseData.results, function(i, rows) {
-//         $("#results").append("<li class='list-group-info'>"+rows.title + "<br>" +"<a href='"+rows.url+"' >"+rows.url+"</a>"+"</br></li>");
-//     });
-//     $("#results").append("</ul>");
-// }
+
+
+$(document).ready(function(){
+	var clickEvent = false;
+	$('#myCarousel').carousel({
+		interval:   4000
+	}).on('click', '.list-group li', function() {
+			clickEvent = true;
+			$('.list-group li').removeClass('active');
+			$(this).addClass('active');
+	}).on('slid.bs.carousel', function(e) {
+		if(!clickEvent) {
+			var count = $('.list-group').children().length -1;
+			var current = $('.list-group li.active');
+			current.removeClass('active').next().addClass('active');
+			var id = parseInt(current.data('slide-to'));
+			if(count == id) {
+				$('.list-group li').first().addClass('active');
+			}
+		}
+		clickEvent = false;
+	});
+});
+$(window).load(function() {
+    var boxheight = $('#myCarousel .carousel-inner').innerHeight();
+    var itemlength = $('#myCarousel .item').length;
+	var triggerheight = Math.round(boxheight/itemlength+1);
+	$('#myCarousel .list-group-item').outerHeight(triggerheight);
+});
