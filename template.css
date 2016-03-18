@@ -1,0 +1,18 @@
+
+
+/* Template Containers */
+.tempcontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.lcontainer {
+  flex-grow: 3 2 350px; 
+}
+.rcontainer {
+  flex-grow: 1 1 250px;
+  padding: 25px;
+}
+.textareatemp {
+  
+}
