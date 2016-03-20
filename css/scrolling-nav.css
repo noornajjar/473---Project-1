@@ -82,7 +82,7 @@ background-image: url('../img/bg2.jpg');
   margin: auto;
   padding-top: 80px;
   padding-bottom: 80px;
-  background-size: 100% auto;
+  background-size: contain;
   background-position: center;
   background-image: url("../img/Infinite-space.jpg");}
 
@@ -180,7 +180,7 @@ background-image: url('../img/bg2.jpg');
   color: lightgray;
   text-align: center;
   margin: 0 auto;
-  background-size: 100% auto;
+  background-size: cover;
   background-position: center;
   background-image: url("../img/become.jpg");
   background-repeat: repeat-x;
