@@ -1,9 +1,10 @@
 {
     [
         "users": {
-            "id": 1,
+            "email": "noornajjar@csu.fullerton.edu",
+            "password": "test",
             "name": "Noor Najjar",
-            "descripsion":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." 
+            "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." 
         }
     
     ]
