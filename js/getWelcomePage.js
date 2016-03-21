@@ -2,7 +2,7 @@ var main = function() {
     "use strict";
 
     //create new person
-    var $desc;
+    /*var $desc;
     $(".mdl-textfield button").on("click", function(event) {
         var $new_actor;
         if ($(".mdl-textfield input").val() != "") {
@@ -68,7 +68,28 @@ var main = function() {
             $("main .demo-list-action").append($div);
         });
 
-    });
+    });*/
+	
+	//populate description
+	//create actors list
+    $.get("http://localhost:3000/users/", function(users) {
+        var $weldiv,
+            $span,
+            $i,
+            $a,
+			$p;
+	//$("main .aboutme").empty();
+        users.forEach(function(users) {
+			console.log("in user loop");
+			$weldiv = $("<div>").addClass("plain-content");
+			$("main").append($weldiv);
+			$p = $("<p>");
+			$p.text(users.description);
+			$weldiv.append($p);
+
+		});
+	});
+	console.log("this works!");
 
 };
 
