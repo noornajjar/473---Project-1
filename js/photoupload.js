@@ -1,3 +1,4 @@
+//code source and instructions on how to work: http://tonyspiro.com/uploading-resizing-images-fly-node-js-express/
 var express = require("express"),
     app = express(),
     formidable = require('formidable'),
