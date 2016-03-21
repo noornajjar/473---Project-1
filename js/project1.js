@@ -8,32 +8,28 @@ var main = function () {
 				userpassword,
 				userphone,
 				usergender,
+				userwebsite,
 				userdescription;
 			username = $("#txtName").val();
 			userbirthdate = $("#txtBirthDate").val();
-		var new_name = $("#txtName").val();
-		var new_birthday = $("#txtBirthDate").val();
-		console.log(new_name);
-		console.log(new_birthday);
-		alert(new_name);
+			useremail = $("#txtEmail").val();
+			userpassword = $("#txtPassword").val();
+			userphone = $("#txtPhone").val();
+			usergender = $("#txtGender").val();
+			userwebsite = $("#txtWebsite").val();
+			userdescription = $("#txtDescription").val();
+			$.post("http://localhost:3000/users", 
+			   {
+				email : useremail,
+				password : userpassword,
+				name : username,
+				description : userdescription,
+				gender : usergender,
+				dob : userbirthdate 
+			    }, function() {
+					window.location.reload();
+				});
+			return false;
 	});	
 };
 $(document).ready(main);
-
-
-
-		// if ($(".mdl-textfield input").val() != "") {
-		// 	$new_actor = $(".mdl-textfield input").val();
-		// 	$(".mdl-textfield input").val("");
-		// 		$.post("http://localhost:3000/actors", {
-		// 			"name" : $new_actor,
-		// 			"starred" : false
-		// 		}, function() {
-		// 			window.location.reload();
-		// 		});
-		// }
-
-
-		// if($(".description input").val() !== ""){
-		// $desc = $<p>.text($(".description input").val());
-		//}
