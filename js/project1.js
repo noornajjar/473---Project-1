@@ -30,24 +30,20 @@ var main = function () {
 			dob : userbirthdate,
             login: true
 		    }, function() {
-				window.location.href = "userpage.html";
+				window.location.href = "userpage.html?useremail="+useremail;
         });
         loggedIn = useremail;
 		return false;
 	});	
     
     $.get("http://localhost:3000/users/", function(users) {
-        var $weldiv,
-            $span,
-            $i,
-            $insertName,
-			$insertDescription;
-	//$("main .aboutme").empty();
+        var $insertName,
+			$insertDescription,
+            email;
+	    //$("main .aboutme").empty();
+        email = window.location.search.replace("?", "").substr(10);
         users.forEach(function(users) {
-			console.log("in user loop");
-            console.log(users.login);
-			if(users.login){
-                console.log(users.name);
+			if(users.email === email){
                 $insertName = $(".name");
                 $insertName.text(users.name);
                 $insertDescription = $("#about .plain-content p");
@@ -55,6 +51,5 @@ var main = function () {
             }
 		});
 	});
-	console.log("this works!");
 };
 $(document).ready(main);
