@@ -138,27 +138,24 @@
 			      <!--<div id ="aboutEdit">
 			  
 			      </div>-->
+
+            <!-- /text area ------------------------------------------------------------------------------------------------------------>
+                               <label for="bio">Short Bio(up to 140 characters)</label>
+                               <textarea name="bio" id="bio" rows="5" cols="30"></textarea>
+                               <span id="bio-count" class="hide"></span>
+                               <button type="button" onclick="editTextArea()">Edit</button>
+                        </div>
+                        
+                        <p id="demo">Good </p>
+                        <script>
+                            function editTextArea() {
+                                var x = document.getElementById("bio").value;
+                                document.getElementById("demo").innerHTML = x;
+                            }
+                        </script>
+<!-- /text area ------------------------------------------------------------------------------------------------------------>
 			      </main>
 			     <!-- END MAIN -->
-<!-- /text area ------------------------------------------------------------------------------------------------------------>
-                 <!-- <label for="bio">Short Bio(up to 140 characters)</label>
-                  <textarea name="bio" id="bio" rows="5" cols="30"></textarea>
-                  <span id="bio-count" class="hide"></span>
-
- 
-				           <button type="button" onclick="editTextArea()">Edit</button>
-                </div> -->
-<p id="demo"></p>
-<script>
-function editTextArea() {
-    var x = document.getElementById("bio").value;
-    document.getElementById("demo").innerHTML = x;
-}
-</script>
-
-
-<!-- /text area ------------------------------------------------------------------------------------------------------------>
-
 
                 <!-- /Welcome block -->
 
