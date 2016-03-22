@@ -44,16 +44,15 @@ var main = function () {
         email = window.location.search.replace("?", "").substr(10);
         users.forEach(function(users) {
 			if(users.email === email){
-                $insertName = $(".name");
-                $insertName.text(users.name);
-                $insertDescription = $("#about .plain-content p");
-                $insertDescription.text(users.description);
+
+                $(".name").text(users.name);
+                $(".description").text(users.description);
+                $('#email').text(email);
             }
 		});
-	});
-    
-    // This code is used from: http://stackoverflow.com/questions/36082781/change-a-paragraph-of-text-to-a-textarea
-    var $orgTxt="";
+        
+        // This code is used from: http://stackoverflow.com/questions/36082781/change-a-paragraph-of-text-to-a-textarea
+    var $orgTxt="",$newTxt="";
 
     $('.edit').on('click', function(){
         $orgTxt=$('.description').text();
@@ -75,11 +74,14 @@ var main = function () {
 
     $('.cancel').on('click', function(){
 
-        $('.description').text(orgTxt);
+        $('.description').text($orgTxt);
         $('.description').removeClass('editable').prop('contenteditable',false);
         $('.save, .cancel').addClass('hide');
         $('.edit').removeClass('hide');
     });
+	});
+    
+    
 
 };
 $(document).ready(main);
