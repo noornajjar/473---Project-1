@@ -51,5 +51,35 @@ var main = function () {
             }
 		});
 	});
+    
+    // This code is used from: http://stackoverflow.com/questions/36082781/change-a-paragraph-of-text-to-a-textarea
+    var $orgTxt="";
+
+    $('.edit').on('click', function(){
+        $orgTxt=$('.description').text();
+        $('.description').addClass('editable').prop('contenteditable',true);
+        $(this).addClass('hide');
+        $('.save, .cancel').removeClass('hide');
+
+
+    });
+
+    $('.save').on('click', function(){
+        $newTxt=$('.description').text();
+        //add code to PUT to json
+        $('.description').removeClass('editable').prop('contenteditable',false);
+        $('.save, .cancel').addClass('hide');
+        $('.edit').removeClass('hide');
+        
+    });
+
+    $('.cancel').on('click', function(){
+
+        $('.description').text(orgTxt);
+        $('.description').removeClass('editable').prop('contenteditable',false);
+        $('.save, .cancel').addClass('hide');
+        $('.edit').removeClass('hide');
+    });
+
 };
 $(document).ready(main);

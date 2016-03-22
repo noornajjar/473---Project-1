@@ -1312,3 +1312,17 @@ div #home {
     line-height: 43px;
   }
 }
+
+.hide{
+  display:none;
+}
+
+.editable{
+  border:1px solid grey;
+  background:white;
+}
+
+.editable:focus{
+  border-color:blue;
+
+}
