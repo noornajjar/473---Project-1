@@ -186,6 +186,13 @@ background-image: url('../img/bg2.jpg');
   background-repeat: repeat-x;
   background-color: #eee;
 }
+
+#contactSection{
+bottom: 0px;
+padding-top: 400px;
+
+}
+
 .wrapper {
   text-align: center;
 }
