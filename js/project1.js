@@ -42,6 +42,19 @@ var main = function () {
             email;
 	    //$("main .aboutme").empty();
         email = window.location.search.replace("?", "").substr(10);
+       
+
+         users.forEach(function(user) {
+			if(user.email === email){
+
+                $(".name").text(user.name);
+                $(".description").text(user.description);
+                $('#email').text(email);
+                  console.log(user.description);
+            }
+		});
+        
+        /*
         users.forEach(function(users) {
 			if(users.email === email){
 
@@ -50,6 +63,7 @@ var main = function () {
                 $('#email').text(email);
             }
 		});
+*/
         
         // This code is used from: http://stackoverflow.com/questions/36082781/change-a-paragraph-of-text-to-a-textarea
         var $orgTxt="",$newTxt="";
