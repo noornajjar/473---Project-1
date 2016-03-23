@@ -137,12 +137,13 @@
 
                         <!-- About -->
                         <!-- Welcome block -->
-                        <div class="plain-content">
+                       <main> 
+                       <div class="plain-content">
                             <h1>Welcome!</h1>
                             <p></p>
 
                             <!-- ADDED MAIN-->
-                            <main>
+                            
                                 <div class="container">
 
                                     <!-- users -->
@@ -154,19 +155,16 @@
                                 <!--<div id ="aboutEdit">       
                                 </div>-->
             <!-- /text area ------------------------------------------------------------------------------------------------------------>
-                               <label for="bio">Short Bio(up to 140 characters)</label>
-                               <textarea name="bio" id="bio" rows="5" cols="30"></textarea>
-                               <span id="bio-count" class="hide"></span>
-                               <button type="button" onclick="editTextArea()">Edit</button>
+                               <div id ="aboutEdit">
+
+                                       <label for="bio">Short Bio(up to 140 characters)</label>
+                                       <textarea name="bio" id="bio" rows="2" cols="15"></textarea>
+                                       <button type="button" onclick="editTextArea()">Post</button>
+                              </div>
                         </div>
                         
-                        <p id="demo">Good </p>
-                        <script>
-                            function editTextArea() {
-                                var x = document.getElementById("bio").value;
-                                document.getElementById("demo").innerHTML = x;
-                            }
-                        </script>
+                               <p id="descr"> </p>
+                        
            <!-- /text area ------------------------------------------------------------------------------------------------------------>
                             </main>
                             <!-- END MAIN -->                                   
@@ -508,8 +506,8 @@
                         <div id="map"></div>
                         <!-- /Google Map -->
 
-                        <!-- / Contacts -->
                     </div>
+                        <!-- / Contacts -->
                     <div id="feedback">
 
                         <!-- Feedback -->
@@ -560,7 +558,7 @@
         <a href="#top"></a>
     </div>
     <!-- /Back to Top -->
-
+<script src="js/textarea-counter.js" type="text/javascript"></script>
 </body>
 
 </html>
