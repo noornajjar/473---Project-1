@@ -1,7 +1,8 @@
 
     "use strict";
     /* ========================================= click button event ========================================*/
-       function editTextArea() {       
+       function editTextArea() {   
+        alert("call");    
         var strUrl = "http://localhost:3000/users";
         
         var userEmail, 
@@ -21,12 +22,10 @@ jQuery.ajax({
                 userEmail = user.email,
                 userpassword = user.password;
                 userName = user.name;
-                
                 userGender = user.gender;
                 userDoB = user.dob;
                 userId = user.id;
                 userDescription = user.description;
-
         });
           
             },
@@ -68,9 +67,8 @@ jQuery.ajax({
             dob : userDoB,
             login: true,
             id : userId
-            }, function() {
-                //window.location.href = "userpage.html";
-                console.log("sasa, this works!");  
+            }, function() {          
+                console.log("sasa!");  
         });
     } // end button click
 
