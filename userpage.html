@@ -64,7 +64,7 @@
           <!-- Photo -->
           <div class="photo">
             <ul id="photo" class="tabs">
-              <li class="def"><a href="#home"><img src="img/photo.png" alt="James Anderson" /></a></li>
+              <li class="def"><a href="#home"><img id="profile-pic" src="img/photo.png" alt="James Anderson" /></a></li>
             </ul>
           </div>
           <!-- /Photo -->
@@ -121,8 +121,8 @@
                 <div class="plain-content">
                   <h1>Welcome!</h1>
                   <!-- This code is used from: http://stackoverflow.com/questions/36082781/change-a-paragraph-of-text-to-a-textarea -->
-                  <div class="description">This is the text I want to test on.</div><br>
-                  <button class="edit">Edit</button>
+                  <div class="description"></div><br>
+                  <button class="edit describe">Edit</button>
                   <button class="save hide">Save</button>
                   <button class="cancel hide">Cancel</button>
 				  <!-- ADDED MAIN-->
@@ -139,15 +139,9 @@
 			  
 			      </div>-->
 			      </main>
-			     <!-- END MAIN -->
-<!-- /text area ------------------------------------------------------------------------------------------------------------>
-                 <!-- <label for="bio">Short Bio(up to 140 characters)</label>
-                  <textarea name="bio" id="bio" rows="5" cols="30"></textarea>
-                  <span id="bio-count" class="hide"></span>
+			      <!-- END MAIN -->
 
- 
-				           <button type="button" onclick="editTextArea()">Edit</button>
-                </div> -->
+                </div> 
 <p id="demo"></p>
 <script>
 function editTextArea() {
@@ -210,7 +204,7 @@ function editTextArea() {
               </div>
 			  
 			  <div id ="aboutEdit">
-			  im here
+			  
 			  </div>
               <div id="resume">
 
@@ -219,6 +213,9 @@ function editTextArea() {
                 <div class="plain-content">
                   <h1>Resume</h1>
                   <p>Here i'd like to describe all my professional experience and skills.</p>
+                  <button class="editR">Edit</button>
+                  <button class="saveR hide">Save</button>
+                  <button class="cancelR hide">Cancel</button>
                 </div>
                 <!-- /Resume title -->
 
@@ -227,19 +224,23 @@ function editTextArea() {
                   <div><h2>Employment</h2></div>
                   <div class="job">
                     <div class="date">
-                      <div class="datefrom">2011</div>
-                      <div class="datetill">Present</div>
+                      <div class="datefrom"><div class="resumeEdit">2011</div></div>
+                      <div class="datetill"><div class="resumeEdit">Present</div></div>
                       <div class="trianglewrap"><div class="datetriangle"></div></div>
                     </div>
                     <div class="jobtitle">
-                      <h3>Connectivity Group LLC</h3>
-                      <h4><strong>Art-Director</strong></h4>
+                      <h3><div class="resumeEdit">Connectivity Group LLC</div></h3>
+                      <h4><strong><div class="resumeEdit">Art-Director</div></strong></h4>
                       <div class="jobdescription">
                         <div class="one-half">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                          <div class="resumeEdit">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                          </div>
                         </div>
                         <div class="one-half column-last">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                          <div class="resumeEdit">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -247,19 +248,23 @@ function editTextArea() {
                   <div class="clear dividewhite3"></div>
                   <div class="job">
                     <div class="date">
-                      <div class="datefrom">2011</div>
-                      <div class="datetill">Present</div>
+                      <div class="datefrom"><div class="resumeEdit">2011</div></div>
+                      <div class="datetill"><div class="resumeEdit">Present</div></div>
                       <div class="trianglewrap"><div class="datetriangle"></div></div>
                     </div>
                     <div class="jobtitle">
-                      <h3>ABC Construction</h3>
-                      <h4><strong>Web Designer</strong></h4>
+                      <h3><div class="resumeEdit">ABC Construction</div></h3>
+                      <h4><strong><div class="resumeEdit">Web Designer</div></strong></h4>
                       <div class="jobdescription">
                         <div class="one-half">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                          <div class="resumeEdit">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                          </div>
                         </div>
                         <div class="one-half column-last">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                          <div class="resumeEdit">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -273,19 +278,23 @@ function editTextArea() {
                   <div><h2>Education</h2></div>
                   <div class="job">
                     <div class="date">
-                      <div class="datefrom">2011</div>
-                      <div class="datetill-f">Present</div>
+                      <div class="datefrom"><div class="resumeEdit">2011</div></div>
+                      <div class="datetill-f"><div class="resumeEdit">Present</div></div>
                       <div class="trianglewrap"><div class="datetriangle-f"></div></div>
                     </div>
                     <div class="jobtitle">
-                      <h3>Lorem Ipsum University</h3>
-                      <h4><strong>Graphic Designer</strong></h4>
+                      <h3><div class="resumeEdit">Lorem Ipsum University</div></h3>
+                      <h4><strong><div class="resumeEdit">Graphic Designer</div></strong></h4>
                       <div class="jobdescription">
                         <div class="one-half">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                          <div class="resumeEdit">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                          </div>
                         </div>
                         <div class="one-half column-last">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                          <div class="resumeEdit">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -304,22 +313,28 @@ function editTextArea() {
                     <div class="one-third">
                       <div>
                         <input class="knob" data-width="150" data-fgcolor="#1abc9c" data-bgcolor="#d2d4d8" data-thickness=".2" readonly="" value="25" />
-                        <h4><strong>Graphic Designer</strong></h4>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin
+                        <h4><strong><div class="resumeEdit">Graphic Designer</div></strong></h4>
+                        <div class="resumeEdit">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin
+                        </div>
                       </div>
                     </div>
                     <div class="one-third">
                       <div>
                         <input class="knob" data-width="150" data-fgcolor="#9b59b6" data-bgcolor="#d2d4d8" data-thickness=".2" readonly="" value="58" />
-                        <h4><strong>Graphic Designer</strong></h4>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin
+                        <h4><strong><div class="resumeEdit">Graphic Designer</div></strong></h4>
+                        <div class="resumeEdit">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin
+                        </div>
                       </div>
                     </div>
                     <div class="one-third column-last">
                       <div>
                         <input class="knob" data-width="150" data-fgcolor="#e74c3c" data-bgcolor="#d2d4d8" data-thickness=".2" readonly="" value="90" />
-                        <h4><strong>Graphic Designer</strong></h4>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin
+                        <h4><strong><div class="resumeEdit">Graphic Designer</div></strong></h4>
+                        <div class="resumeEdit">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -474,13 +489,13 @@ function editTextArea() {
                     </div>
                     <div class="one-third">
                       <div>
-                        Phone: (415) 124-5678
-                        Fax: (415) 124-5678
+                        <div id="userphone">Phone: (415) 124-5678</div>
+                        <div id="userfax">Fax: (415) 124-5678</div>
                       </div>
                     </div>
                     <div class="one-third column-last">
-                      <div>
-                        info@snobcompany.com
+                      <div id="email">
+                        
                       </div>
                     </div>
                   </div>
