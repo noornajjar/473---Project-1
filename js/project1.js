@@ -1,6 +1,10 @@
 /*//code source and instructions on how to work photo upload: http://tonyspiro.com/uploading-resizing-images-fly-node-js-express/
 //getting jquery to work in node.js: http://www.hacksparrow.com/jquery-with-node-js.html
 var express = require("express"),
+<<<<<<< HEAD
+=======
+    $ = require('jquery'),
+>>>>>>> origin/master
     app = express(),
     formidable = require('formidable'),
     util = require('util'),
@@ -25,7 +29,11 @@ app.post('/userpage.html', function (req, res){
     // The file name of the uploaded file 
     var file_name = "profile.png";
     // Location where we want to copy the uploaded file 
+<<<<<<< HEAD
     var new_location = 'uploads/';
+=======
+    var new_location = 'img/';
+>>>>>>> origin/master
 
     fs.copy(temp_path, new_location + file_name, function(err) {  
       if (err) {
@@ -45,6 +53,7 @@ var main = function () {
     $("#login-nav").submit(function(){
         var $email = $("#exampleInputEmail2").val(),
             $passwd = $("#exampleInputPassword2").val(),
+<<<<<<< HEAD
             users = {};
         console.log("entered login in");
         $.get("http://localhost:3000/users", function(data) {
@@ -66,6 +75,24 @@ var main = function () {
         console.log("email does not exist");           
     });// end submit
 
+=======
+            url = "http://localhost:3000/users?email=".concat($email, "&password=", $passwd);
+
+        console.log("entered login in");
+        console.log(url);
+        
+        $.get(url, function(data) {
+            console.log("entered get");
+            if(data !== undefined || data.length !== 0){
+                console.log($email);
+                window.location.href = "userpage.html?useremail="+$email;
+            }
+            else {
+                console.log("the password and email do not match");
+            }
+        });             
+    });
+>>>>>>> origin/master
     $("#singlebutton").on("click", function(){
 		var username,
 			userbirthdate,
@@ -98,8 +125,13 @@ var main = function () {
             login: true
         }, function() {
 				window.location.href = "userpage.html?useremail="+useremail;
+<<<<<<< HEAD
         }); //end post /users
 
+=======
+        });
+        
+>>>>>>> origin/master
 		return false;
 	});	// end singlebutton
     
@@ -129,7 +161,10 @@ var main = function () {
                 phone = user.phone;
                 login = user.login;
                 id = user.id;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
                 $(".name").text(name);
                 $(".description").text(desc);
                 $('#email').text(email);
@@ -151,6 +186,11 @@ var main = function () {
             $(".description").addClass("editable").prop("contenteditable",true);
             $(this).addClass("hide");
             $(".save, .cancel").removeClass("hide");
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
         });
 
         $('.save').on('click', function(){
@@ -160,6 +200,7 @@ var main = function () {
                 type:"PUT", 
                 url:"http://localhost:3000/users/"+id.toString(),
                 dataType: "json",
+<<<<<<< HEAD
                 data:JSON.stringify({email: email, 
                                       name: name, 
                                       password: psswd, 
@@ -170,6 +211,9 @@ var main = function () {
                                       login: login,
                                       id: id
                                   }),
+=======
+                data:JSON.stringify({email: email, name: name, password: psswd, description: $newTxt, gender: gend, dob: dob, phone: phone, login: login}),
+>>>>>>> origin/master
                 contentType: "application/json"            
             });
             $('.description').removeClass('editable').prop('contenteditable',false);
@@ -185,6 +229,7 @@ var main = function () {
             $('.save, .cancel').addClass('hide');
             $('.edit').removeClass('hide');
         });
+<<<<<<< HEAD
      });// end .get (users)   
         
 
@@ -354,6 +399,45 @@ console.log("in if id == -1 of GET: dbLength=", dbLength);
         "skill3description": $NEWskillCdescrip,
         "id": dbLength
     };
+=======
+        
+        var $orgTxt="",$newTxt="";
+
+        $(".editR").on("click", function(){
+            $orgTxt=$(".resumeEdit").text();
+            $(".resumeEdit").addClass("editable").prop("contenteditable",true);
+            $(this).addClass("hide");
+            $(".saveR, .cancelR").removeClass("hide");
+
+
+        });
+
+        $('.saveR').on('click', function(){
+            $newTxt=$('.resumeEdit').text();
+            //add code to PUT to json
+            /*$.ajax({ 
+                type:"PUT", 
+                url:"http://localhost:3000/users/"+id.toString(),
+                dataType: "json",
+                data:JSON.stringify({name: name.toString(), starred: "false"}),
+                contentType: "application/json"            
+            });*/
+            $('.resumeEdit').removeClass('editable').prop('contenteditable',false);
+            $('.saveR, .cancelR').addClass('hide');
+            $('.editR').removeClass('hide');
+        
+        });
+
+        $('.cancelR').on('click', function(){
+
+            $('.resumeEdit').text($orgTxt);
+            $('.resumeEdit').removeClass('editable').prop('contenteditable',false);
+            $('.saveR, .cancelR').addClass('hide');
+            $('.editR').removeClass('hide');
+        });
+	});
+    
+>>>>>>> origin/master
     
     var resumeUrl = "http://localhost:3000/resumes";
     $.ajax({
