@@ -1,6 +1,7 @@
 /*//code source and instructions on how to work photo upload: http://tonyspiro.com/uploading-resizing-images-fly-node-js-express/
 //getting jquery to work in node.js: http://www.hacksparrow.com/jquery-with-node-js.html
 var express = require("express"),
+    $ = require('jquery'),
     app = express(),
     formidable = require('formidable'),
     util = require('util'),
@@ -25,7 +26,7 @@ app.post('/userpage.html', function (req, res){
     // The file name of the uploaded file 
     var file_name = "profile.png";
     // Location where we want to copy the uploaded file 
-    var new_location = 'uploads/';
+    var new_location = 'img/';
 
     fs.copy(temp_path, new_location + file_name, function(err) {  
       if (err) {
