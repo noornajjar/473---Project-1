@@ -1,34 +1,54 @@
 
     "use strict";
+    function getParameterByName( name ){
+    var regexS = "[\\?&]"+name+"=([^&#]*)", 
+  regex = new RegExp( regexS ),
+  results = regex.exec( window.location.search );
+  if( results == null ){
+    return "";
+  } else{
+    return decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+}
+
+
+
     /* ========================================= click button event ========================================*/
-       function editTextArea() {       
-        var strUrl = "http://localhost:3000/users";
-        
+       function editTextArea() {   
+       
+        //var strUrl = "http://localhost:3000/users";
+         var strUrl = "http://localhost:3000/users";
         var userEmail, 
             userpassword,
             userName,
+            userDescription, 
             userGender,
             userDoB,
-            userId,
-            userDescription;             
+            userId;
+        var userLogin = false;           
         var $newBio = document.getElementById("bio").value;
+
+        userEmail = getParameterByName('useremail');
+         console.log(userEmail);
         
 jQuery.ajax({
             type: 'GET',
             url: strUrl,
-            success: function(users) {
-            users.forEach(function(user) {                            
-                userEmail = user.email,
-                userpassword = user.password;
-                userName = user.name;
-                
-                userGender = user.gender;
-                userDoB = user.dob;
-                userId = user.id;
-                userDescription = user.description;
+            success: function(users) {                 
+                users.forEach(function(user) {
 
-        });
-          
+                    if(userEmail === user.email) {
+                        userEmail = user.email,
+                        userpassword = user.password;
+                        userName = user.name;
+                        userDescription = user.description;
+                        userGender = user.gender;
+                        userDoB = user.dob;
+                        userLogin = user.login;                       
+                        userId = user.id;  
+                        console.log("test: "+userId);                                             
+                    }                                          
+               });
             },
             async: false
         });
@@ -44,6 +64,8 @@ jQuery.ajax({
             "description" : $newBio
            
         };
+        console.log(userLogin);
+        console.log(userEmail);
         console.log(userId); 
         console.log($newBio);  
         /*
@@ -58,6 +80,8 @@ jQuery.ajax({
             async: false
         });
         */
+
+        //$.put("http://localhost:3000/users/"+userId, 
         $.post("http://localhost:3000/users", 
            {
             email : userEmail,
@@ -68,9 +92,8 @@ jQuery.ajax({
             dob : userDoB,
             login: true,
             id : userId
-            }, function() {
-                //window.location.href = "userpage.html";
-                console.log("sasa, this works!");  
+            }, function() {          
+                console.log("post!");  
         });
     } // end button click
 

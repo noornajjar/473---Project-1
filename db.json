@@ -4,14 +4,42 @@
             "email": "noornajjar@csu.fullerton.edu",
             "password": "test",
             "name": "Noor Najjar",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "gender": "female",
             "dob": "05/15/1991",
             "phone": "(555)555-5555",
             "login": "false",
-            "id" : 1
+            "id": 1
         }
-    
+    ],
+    "resumes": [
+        {
+            "email": "noornajjar@csu.fullerton.edu",
+            "company1": "google",
+            "title1": "Director",
+            "datefrom1": "2015",
+            "datetill1": "2013",
+            "jobdescription1left": " host VCs and CEOs",
+            "jobdescription1right": "work closely with startups in the LA area",
+            "company2": "IBM",
+            "title2": "developer",
+            "datefrom2": "2011",
+            "datetill2": "2010",
+            "jobdescription2left": "Construct roadmap for high-potential startups ",
+            "jobdescription2right": "create web app for automated sourcing",
+            "school": "CSUF",
+            "major": "Computer Science",
+            "yearfrom": "2008",
+            "yearto": "2010",
+            "edudescriptionleft": "learn cs skill",
+            "edudescriptionright": "Wrote scientific paper",
+            "skill1title": "Teamwork",
+            "skill1description": "Public Speaking, Community Outreach",
+            "skill2title": " JavaScript",
+            "skill2description": "Node.js, HTML",
+            "skill3title": "Software Development",
+            "skill3description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin",
+            "id": 1
+        }
     ]
-
 }

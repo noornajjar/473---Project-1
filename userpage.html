@@ -222,7 +222,7 @@ function editTextArea() {
                 <!-- Employment block -->
                 <div class="grey-content">
                   <div><h2>Employment</h2></div>
-                  <div class="job">
+                  <div class="job" id="job1">
                     <div class="date">
                       <div class="datefrom"><div class="resumeEdit">2011</div></div>
                       <div class="datetill"><div class="resumeEdit">Present</div></div>
@@ -232,21 +232,21 @@ function editTextArea() {
                       <h3><div class="resumeEdit">Connectivity Group LLC</div></h3>
                       <h4><strong><div class="resumeEdit">Art-Director</div></strong></h4>
                       <div class="jobdescription">
-                        <div class="one-half">
+                        <div class="one-half" id="job1left">
                           <div class="resumeEdit">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
                           </div>
                         </div>
                         <div class="one-half column-last">
                           <div class="resumeEdit">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="clear dividewhite3"></div>
-                  <div class="job">
+                  <div class="job" id="job2">
                     <div class="date">
                       <div class="datefrom"><div class="resumeEdit">2011</div></div>
                       <div class="datetill"><div class="resumeEdit">Present</div></div>
@@ -256,9 +256,9 @@ function editTextArea() {
                       <h3><div class="resumeEdit">ABC Construction</div></h3>
                       <h4><strong><div class="resumeEdit">Web Designer</div></strong></h4>
                       <div class="jobdescription">
-                        <div class="one-half">
+                        <div class="one-half" id="job2left">
                           <div class="resumeEdit">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
                           </div>
                         </div>
                         <div class="one-half column-last">
@@ -276,7 +276,7 @@ function editTextArea() {
                 <!-- Education block -->
                 <div class="plain-content">
                   <div><h2>Education</h2></div>
-                  <div class="job">
+                  <div class="job" id="edu">
                     <div class="date">
                       <div class="datefrom"><div class="resumeEdit">2011</div></div>
                       <div class="datetill-f"><div class="resumeEdit">Present</div></div>
@@ -286,9 +286,9 @@ function editTextArea() {
                       <h3><div class="resumeEdit">Lorem Ipsum University</div></h3>
                       <h4><strong><div class="resumeEdit">Graphic Designer</div></strong></h4>
                       <div class="jobdescription">
-                        <div class="one-half">
+                        <div class="one-half" id="eduleft">
                           <div class="resumeEdit">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin, ac pharetra diam convallis. Integer lobortis justo tempus odio gravida
                           </div>
                         </div>
                         <div class="one-half column-last">
@@ -310,29 +310,29 @@ function editTextArea() {
                   <div><h2>Skills</h2></div>
                   <div class="clear dividewhite3"></div>
                   <div>
-                    <div class="one-third">
+                    <div class="one-third" id="skill1">
                       <div>
                         <input class="knob" data-width="150" data-fgcolor="#1abc9c" data-bgcolor="#d2d4d8" data-thickness=".2" readonly="" value="25" />
                         <h4><strong><div class="resumeEdit">Graphic Designer</div></strong></h4>
-                        <div class="resumeEdit">
+                        <div class="resumeEdit" id="skill1des">
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin
                         </div>
                       </div>
                     </div>
-                    <div class="one-third">
+                    <div class="one-third" id="skill2">
                       <div>
                         <input class="knob" data-width="150" data-fgcolor="#9b59b6" data-bgcolor="#d2d4d8" data-thickness=".2" readonly="" value="58" />
                         <h4><strong><div class="resumeEdit">Graphic Designer</div></strong></h4>
-                        <div class="resumeEdit">
+                        <div class="resumeEdit" id="skill2des">
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin
                         </div>
                       </div>
                     </div>
-                    <div class="one-third column-last">
+                    <div class="one-third column-last" id="skill3">
                       <div>
                         <input class="knob" data-width="150" data-fgcolor="#e74c3c" data-bgcolor="#d2d4d8" data-thickness=".2" readonly="" value="90" />
                         <h4><strong><div class="resumeEdit">Graphic Designer</div></strong></h4>
-                        <div class="resumeEdit">
+                        <div class="resumeEdit" id="skill3des">
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin
                         </div>
                       </div>
@@ -489,7 +489,7 @@ function editTextArea() {
                     </div>
                     <div class="one-third">
                       <div>
-                        <div id="userphone">Phone: (415) 124-5678</div>
+                        <div id="userphone">Phone: </div>
                         <div id="userfax">Fax: (415) 124-5678</div>
                       </div>
                     </div>
