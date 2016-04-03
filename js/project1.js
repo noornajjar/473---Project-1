@@ -53,7 +53,7 @@ var main = function () {
         
         $.get(url, function(data) {
             console.log("entered get");
-            if(data !== undefined || data.length === 0){
+            if(data !== undefined || data.length !== 0){
                 console.log($email);
                 window.location.href = "userpage.html?useremail="+$email;
             }
