@@ -312,9 +312,11 @@ console.log("first get id:", id);
             $NEWskillCdescrip = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin";
 //id is not -1, if -1.           
 //===========================post resume =====================================          
-if (id === -1) {
+var dbLength;
+if (email !== "" &&id === -1) 
+{
     var strUrl = "http://localhost:3000/users";
-    var dbLength;
+    //var dbLength;
 
     jQuery.ajax({
         type: 'GET',
@@ -325,6 +327,7 @@ console.log("in if id == -1 of GET: dbLength=", dbLength);
         },
         async: false
     });
+    id = dbLength;
 
     var newResume = {
         "email": email,
@@ -355,6 +358,8 @@ console.log("in if id == -1 of GET: dbLength=", dbLength);
         "id": dbLength
     };
     
+    console.log(email);
+
     var resumeUrl = "http://localhost:3000/resumes";
     $.ajax({
         type: 'POST',
