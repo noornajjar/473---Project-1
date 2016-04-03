@@ -310,20 +310,20 @@ console.log("first get id:", id);
             $NEWskillBdescrip = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin";
        var  $NEWskillC = "Graphic Designer",
             $NEWskillCdescrip = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin";
-//id is not -1, if -1.           
-//===========================post resume =====================================          
+          
+//===========================post resume =====================================     
+//if it is new user.      
 var dbLength;
 if (email !== "" &&id === -1) 
 {
     var strUrl = "http://localhost:3000/users";
     //var dbLength;
-
     jQuery.ajax({
         type: 'GET',
         url: strUrl,
         success: function(data) {
             dbLength = data.length;
-console.log("in if id == -1 of GET: dbLength=", dbLength);
+console.log("inside if statement id == -1: dbLength=", dbLength);
         },
         async: false
     });
@@ -371,8 +371,9 @@ console.log("post success");
         dataType: 'json',
         async: false
     });
-}
+}//end if
 //=========================== end post resume =====================================
+
 console.log("outside if id==-1 statement, id=", id);
 
         $(".editR").on("click", function(){
