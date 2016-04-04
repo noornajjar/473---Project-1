@@ -20,14 +20,14 @@ app.post('/userpage.html', function (req, res){
   });
 
   form.on('end', function(fields, files) {
-    // Temporary location of our uploaded file 
+    // Temporary location of our uploaded file
     var temp_path = this.openedFiles[0].path;
-    // The file name of the uploaded file 
+    // The file name of the uploaded file
     var file_name = "profile.png";
-    // Location where we want to copy the uploaded file 
+    // Location where we want to copy the uploaded file
     var new_location = 'uploads/';
 
-    fs.copy(temp_path, new_location + file_name, function(err) {  
+    fs.copy(temp_path, new_location + file_name, function(err) {
       if (err) {
         console.error(err);
       } else {
@@ -41,7 +41,7 @@ app.listen(8080);*/
 
 var main = function () {
 	"use strict";
-    
+
     $("#login-nav").submit(function(){
         var $email = $("#exampleInputEmail2").val(),
             $passwd = $("#exampleInputPassword2").val(),
@@ -63,7 +63,7 @@ var main = function () {
                 }
             }
         });
-        console.log("email does not exist");           
+        console.log("email does not exist");
     });// end submit
 
     $("#singlebutton").on("click", function(){
@@ -85,8 +85,8 @@ var main = function () {
 		usergender = $("#txtGender").val();
 		userwebsite = $("#txtWebsite").val();
 		userdescription = $("#txtDescription").val();
-        
-		$.post("http://localhost:3000/users", 
+
+		$.post("http://localhost:3000/users",
         {
             email: useremail,
             password : userpassword,
@@ -102,7 +102,7 @@ var main = function () {
 
 		return false;
 	});	// end singlebutton
-    
+
     $.get("http://localhost:3000/users/", function(users) {
         var $insertName,
 			$insertDescription,
@@ -142,7 +142,7 @@ var main = function () {
                 }*/
             }
 		});
-        
+
         // This code is used from: http://stackoverflow.com/questions/36082781/change-a-paragraph-of-text-to-a-textarea
         var $orgTxt="",$newTxt="";
 
@@ -156,26 +156,26 @@ var main = function () {
         $('.save').on('click', function(){
             $newTxt=$('.description').text();
             //add code to PUT to json
-            $.ajax({ 
-                type:"PUT", 
+            $.ajax({
+                type:"PUT",
                 url:"http://localhost:3000/users/"+id.toString(),
                 dataType: "json",
-                data:JSON.stringify({email: email, 
-                                      name: name, 
-                                      password: psswd, 
-                                      description: $newTxt, 
-                                      gender: gend, 
-                                      dob: dob, 
-                                      phone: phone, 
+                data:JSON.stringify({email: email,
+                                      name: name,
+                                      password: psswd,
+                                      description: $newTxt,
+                                      gender: gend,
+                                      dob: dob,
+                                      phone: phone,
                                       login: login,
                                       id: id
                                   }),
-                contentType: "application/json"            
+                contentType: "application/json"
             });
             $('.description').removeClass('editable').prop('contenteditable',false);
             $('.save, .cancel').addClass('hide');
             $('.edit').removeClass('hide');
-        
+
         });
 
         $('.cancel').on('click', function(){
@@ -185,8 +185,8 @@ var main = function () {
             $('.save, .cancel').addClass('hide');
             $('.edit').removeClass('hide');
         });
-     });// end .get (users)   
-        
+     });// end .get (users)
+
 
         //=========================================  resume  ==============================================================
     $.get("http://localhost:3000/resumes/", function(resumes) {
@@ -235,7 +235,7 @@ var main = function () {
                 compBdTill = resume.datetill2;
                 compBdescripL = resume.jobdescription2left;
                 compBdescripR = resume.jobdescription2right;
-  
+
                 School = resume.school;
                 Major = resume.major;
                 eduFrom = resume.yearfrom;
@@ -310,11 +310,11 @@ console.log("first get id:", id);
             $NEWskillBdescrip = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin";
        var  $NEWskillC = "Graphic Designer",
             $NEWskillCdescrip = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla libero a nibh sollicitudin";
-          
-//===========================post resume =====================================     
-//if it is new user.      
+
+//===========================post resume =====================================
+//if it is new user.
 var dbLength;
-if (email !== "" &&id === -1) 
+if (email !== "" &&id === -1)
 {
     var strUrl = "http://localhost:3000/users";
     //var dbLength;
@@ -357,7 +357,7 @@ console.log("inside if statement id == -1: dbLength=", dbLength);
         "skill3description": $NEWskillCdescrip,
         "id": dbLength
     };
-    
+
     console.log(email);
 
     var resumeUrl = "http://localhost:3000/resumes";
@@ -392,7 +392,7 @@ console.log("new resume id is", id);
             $NEWcompAdTill = $("#job1 .datetill .resumeEdit").text();
             $NEWcompAdescripL =$("#job1 #job1left .resumeEdit").text();
             $NEWcompAdescripR = $("#job1 .column-last .resumeEdit").text();
- 
+
             $NEWcompB = $("#job2 .jobtitle h3 div").text();
             $NEWcompBtitle = $("#job2 .jobtitle h4 div").text();
             $NEWcompBdFrom = $("#job2 .datefrom .resumeEdit").text();
@@ -416,14 +416,14 @@ console.log("new resume id is", id);
             $NEWskillC = $("#skill3 h4 div").text();
             $NEWskillCdescrip = $("#skill3des").text();
 
-           $.ajax({ 
-                type:"PUT", 
+           $.ajax({
+                type:"PUT",
                 url:"http://localhost:3000/resumes/"+id.toString(),
                 dataType: "json",
-                data:JSON.stringify({ 
+                data:JSON.stringify({
                                       email: email,
                                       company1: $NEWcompA,
-                                      title1: $NEWcompAtitle, 
+                                      title1: $NEWcompAtitle,
                                       datefrom1: $NEWcompAdFrom,
                                       datetill1: $NEWcompAdTill,
                                       jobdescription1left: $NEWcompAdescripL,
@@ -445,15 +445,15 @@ console.log("new resume id is", id);
                                       skill2title: $NEWskillB,
                                       skill2description: $NEWskillBdescrip,
                                       skill3title: $NEWskillC,
-                                      skill3description: $NEWskillCdescrip,    
+                                      skill3description: $NEWskillCdescrip,
                                       id: id
                                    }),
-                  contentType: "application/json"           
+                  contentType: "application/json"
             });
-console.log("updated 1st newCompany is:",  $NEWcompA); 
+console.log("updated 1st newCompany is:",  $NEWcompA);
             $('.resumeEdit').removeClass('editable').prop('contenteditable',false);
             $('.saveR, .cancelR').addClass('hide');
-            $('.editR').removeClass('hide');        
+            $('.editR').removeClass('hide');
         });
 
 
@@ -463,7 +463,7 @@ console.log("updated 1st newCompany is:",  $NEWcompA);
             $('.saveR, .cancelR').addClass('hide');
             $('.editR').removeClass('hide');
         });
-	
-    });// end .get (resumes)  
+
+    });// end .get (resumes)
 };
 $(document).ready(main);

@@ -11,19 +11,23 @@
   <link rel="icon" type="image/png" href="img/unnamed.png">
   <title>Simply.me</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 
   <script src="http://uguru-realestate-us-jun202013.businesscatalyst.com/3d-slider/sliderengine/jquery.js"></script>
   <script src="http://uguru-realestate-us-jun202013.businesscatalyst.com/3d-slider/sliderengine/amazingslider.js"></script>
   <script src="http://uguru-realestate-us-jun202013.businesscatalyst.com/3d-slider/sliderengine/initslider-1.js"></script>
+  <!-- Include jQuery Popup Overlay -->
+  <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.11/jquery.popupoverlay.js"></script>
 
   <!-- Bootstrap Core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/bootstrap-social.css" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
   <link href="css/team.css" rel="stylesheet">
+  <link href="css/profile.css" rel="stylesheet">
+
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -108,28 +112,131 @@
                         </div>
                         or
                         <form class="form" role="form" method="post" accept-charset="UTF-8" id="login-nav">
-                        <form class="form" role="form" method="post" action="index.html" accept-charset="UTF-8" id="login-nav">
-                          <div class="form-group">
-                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-                          </div>
-                          <div class="form-group">
-                            <label class="sr-only" for="exampleInputPassword2">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                            <div class="help-block text-right"><a href="">Forget the password ?</a></div>
-                          </div>
-                          <div class="form-group">
-                            <button type="submit" id="login-in" class="btn btn-primary btn-block">Sign in</button>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox"> keep me logged-in
-                            </label>
-                          </div>
-                        </form>
+                          <form class="form" role="form" method="post" action="index.html" accept-charset="UTF-8" id="login-nav">
+                            <div class="form-group">
+                              <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                              <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                            </div>
+                            <div class="form-group">
+                              <label class="sr-only" for="exampleInputPassword2">Password</label>
+                              <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                              <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                            </div>
+                            <div class="form-group">
+                              <button type="submit" id="login-in" class="btn btn-primary btn-block">Sign in</button>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input id="keep" type="checkbox"> keep me logged-in
+                              </label>
+                            </div>
+                          </form>
                       </div>
-                      <div class="bottom text-center">
+                      <!-- POPUP SIGNUP  -->
+                      <!-- <div class="bottom text-center">
                         New here? <a href="profile.html"><b>Join Us</b></a>
+                      </div> -->
+                      <button class="my_popup_open btn btn-success btn-block">New here? <b>Join Us</b></button>
+                      <div id="my_popup">
+                        <div class="container">
+                          <form class="form-horizontal" method="post" action="userpage.html" enctype="multipart/form-data">
+                            <fieldset>
+                              ​
+                              <!-- Form Name -->
+                              <div class="dialog">
+
+                                <a class="my_popup_close close-thick"></a>
+
+                                <legend>Sign Up</legend>
+                              </div>
+                              ​ ​
+                              <!-- Text input-->
+                              <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Name</label>
+                                <div class="col-md-4">
+                                  <input id="txtName" name="textinput" type="text" placeholder="Name" class="form-control input-md"> ​
+                                </div>
+                              </div>
+                              ​
+                              <!-- Text input-->
+                              <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">D.O.B</label>
+                                <div class="col-md-4">
+                                  <input id="txtBirthDate" name="textinput" type="date" placeholder="Birthday" class="form-control input-md"> ​
+                                </div>
+                              </div>
+                              ​ ​
+                              <!-- Text input-->
+                              <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Email</label>
+                                <div class="col-md-4">
+                                  <input id="txtEmail" name="textinput" type="email" placeholder="Email Address" class="form-control input-md"> ​
+                                </div>
+                              </div>
+                              ​
+                              <!-- Text input-->
+                              <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Password</label>
+                                <div class="col-md-4">
+                                  <input id="txtPassword" name="textinput" type="password" placeholder="Password" class="form-control input-md"> ​
+                                </div>
+                              </div>
+                              ​ ​
+                              <!-- Text input-->
+                              <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Phone</label>
+                                <div class="col-md-4">
+                                  <input id="txtPhone" name="textinput" type="text" placeholder="Phone" class="form-control input-md"> ​
+                                </div>
+                              </div>
+                              ​ ​
+                              <!-- Select Basic -->
+                              <div class="form-group">
+                                <label class="col-md-4 control-label" for="selectbasic">Gender</label>
+                                <div class="col-md-4">
+                                  <select id="txtGender" name="selectbasic" class="form-control">
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                  </select>
+                                </div>
+                              </div>
+                              ​
+                              <!-- Text input-->
+                              <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Website</label>
+                                <div class="col-md-4">
+                                  <input id="txtWebsite" name="textinput" type="text" placeholder="Website" class="form-control input-md"> ​
+                                </div>
+                              </div>
+                              <!-- Text input-->
+                              <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Description</label>
+                                <div class="col-md-4">
+                                  <textarea id="txtDescription" name="textinput" type="text" placeholder="Description" class="form-control input-md">
+                                  </textarea>
+                                </div>
+                              </div>
+                              ​
+                              <!-- File Button -->
+                              <div class="form-group">
+                                <label class="col-md-4 control-label" for="filebutton">Photo</label>
+                                <div class="col-md-4">
+                                  <input id="filebutton" name="filebutton" class="input-file" type="file" multiple="multiple">
+                                </div>
+                              </div>
+                              ​
+                              <!-- Button -->
+                              <div class="form-group">
+                                <label class="col-md-4 control-label" for="singlebutton"></label>
+                                <div class="col-md-4">
+                                  <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+                                  <button id="cancel" class="my_popup_close btn btn-success">Close</button>
+                                </div>
+                              </div>
+                              ​
+                            </fieldset>
+                          </form>
+                        </div>
                       </div>
                     </div>
                   </li>
@@ -220,7 +327,8 @@
                 <img src="img/flex2 copy.jpg">
                 <div class="carousel-caption">
                   <h4><a href="#">Promote Yourself</a></h4>
-                  <p>Like having a buisness card, but printing out all the links to your various social media sites making your card too crowded? Now, all you need is to print one link! Your Simply.me page will host all the links that were crowding your business card to make it simple and easy to read!</p>
+                  <p>Like having a buisness card, but printing out all the links to your various social media sites making your card too crowded? Now, all you need is to print one link! Your Simply.me page will host all the links that were crowding your
+                    business card to make it simple and easy to read!</p>
                 </div>
               </div>
               <!-- End Item -->
@@ -266,146 +374,143 @@
       </div>
   </section>
 
-<<<<<<< HEAD
-  <!-- Services Section
-=======
-  <!- Services Section
->>>>>>> 27d9a1585c255ff1236f962d20bd58e61bde6333
-  <section id="services" class="services-section">
-    <div class="container">
-      <h3 class="description">Simply.me... Just for YOU!</h3>
-      <br>
-      <div class="row">
-        <div class="col-sm-6 col-md-3">
-          <div class="panel panel-default panel-card">
-            <div class="panel-heading">
-              <img src="img/background1.jpg" />
-              <button class="btn btn-primary btn-sm" role="button">Follow</button>
-            </div>
-            <div class="panel-figure">
-              <img class="img-responsive img-circle" src="img/profile1.jpeg" />
-            </div>
-            <div class="panel-body text-center">
-              <h4 class="panel-header"><a href="https://twitter.com/">@LoremIpsum</a></h4>
-              <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-            </div>
-            <div class="panel-thumbnails">
-              <div class="row">
-                <div class="col-xs-4">
-                  <div class="thumbnail">
-                    <img src="http://placemi.com/deqvy/60x60" />
+  <<<<<<< HEAD <!-- Services Section=======< !- Services Section>>>>>>> 27d9a1585c255ff1236f962d20bd58e61bde6333
+    <section id="services" class="services-section">
+      <div class="container">
+        <h3 class="description">Simply.me... Just for YOU!</h3>
+        <br>
+        <div class="row">
+          <div class="col-sm-6 col-md-3">
+            <div class="panel panel-default panel-card">
+              <div class="panel-heading">
+                <img src="img/background1.jpg" />
+                <button class="btn btn-primary btn-sm" role="button">Follow</button>
+              </div>
+              <div class="panel-figure">
+                <img class="img-responsive img-circle" src="img/profile1.jpeg" />
+              </div>
+              <div class="panel-body text-center">
+                <h4 class="panel-header"><a href="https://twitter.com/">@LoremIpsum</a></h4>
+                <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+              </div>
+              <div class="panel-thumbnails">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <div class="thumbnail">
+                      <img src="http://placemi.com/deqvy/60x60" />
+                    </div>
                   </div>
-                </div>
-                <div class="col-xs-4">
-                  <div class="thumbnail">
-                    <img src="http://placemi.com/oa2nk/60x60" />
+                  <div class="col-xs-4">
+                    <div class="thumbnail">
+                      <img src="http://placemi.com/oa2nk/60x60" />
+                    </div>
                   </div>
-                </div>
-                <div class="col-xs-4">
-                  <div class="thumbnail">
-                    <img src="http://placemi.com/gkkxs/60x60" />
+                  <div class="col-xs-4">
+                    <div class="thumbnail">
+                      <img src="http://placemi.com/gkkxs/60x60" />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="panel panel-default panel-card">
-            <div class="panel-heading">
-              <img src="img/background2.jpg" />
-              <button class="btn btn-primary btn-sm" role="button">Follow</button>
-            </div>
-            <div class="panel-figure">
-              <img class="img-responsive img-circle" src="img/profile2.jpg" />
-            </div>
-            <div class="panel-body text-center">
-              <h4 class="panel-header"><a href="https://twitter.com/">@LoremIpsum</a></h4>
-              <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-            </div>
-            <div class="panel-thumbnails">
-              <div class="row">
-                <div class="col-xs-4">
-                  <div class="thumbnail">
-                    <img src="http://placemi.com/wpcth/60x60" />
+          <div class="col-sm-6 col-md-3">
+            <div class="panel panel-default panel-card">
+              <div class="panel-heading">
+                <img src="img/background2.jpg" />
+                <button class="btn btn-primary btn-sm" role="button">Follow</button>
+              </div>
+              <div class="panel-figure">
+                <img class="img-responsive img-circle" src="img/profile2.jpg" />
+              </div>
+              <div class="panel-body text-center">
+                <h4 class="panel-header"><a href="https://twitter.com/">@LoremIpsum</a></h4>
+                <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+              </div>
+              <div class="panel-thumbnails">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <div class="thumbnail">
+                      <img src="http://placemi.com/wpcth/60x60" />
+                    </div>
                   </div>
-                </div>
-                <div class="col-xs-4">
-                  <div class="thumbnail">
-                    <img src="http://placemi.com/lakvi/60x60" />
+                  <div class="col-xs-4">
+                    <div class="thumbnail">
+                      <img src="http://placemi.com/lakvi/60x60" />
+                    </div>
                   </div>
-                </div>
-                <div class="col-xs-4">
-                  <div class="thumbnail">
-                    <img src="http://placemi.com/zmcwf/60x60" />
+                  <div class="col-xs-4">
+                    <div class="thumbnail">
+                      <img src="http://placemi.com/zmcwf/60x60" />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="panel panel-default panel-card">
-            <div class="panel-heading">
-              <img src="img/background3.png" />
-              <button class="btn btn-primary btn-sm" role="button">Follow</button>
-            </div>
-            <div class="panel-figure">
-              <img class="img-responsive img-circle" src="img/profile3.jpg" />
-            </div>
-            <div class="panel-body text-center">
-              <h4 class="panel-header"><a href="https://twitter.com/">@LoremIpsum</a></h4>
-              <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-            </div>
-            <div class="panel-thumbnails">
-              <div class="row">
-                <div class="col-xs-4">
-                  <div class="thumbnail">
-                    <img src="http://placemi.com/xhu4d/60x60" />
+          <div class="col-sm-6 col-md-3">
+            <div class="panel panel-default panel-card">
+              <div class="panel-heading">
+                <img src="img/background3.png" />
+                <button class="btn btn-primary btn-sm" role="button">Follow</button>
+              </div>
+              <div class="panel-figure">
+                <img class="img-responsive img-circle" src="img/profile3.jpg" />
+              </div>
+              <div class="panel-body text-center">
+                <h4 class="panel-header"><a href="https://twitter.com/">@LoremIpsum</a></h4>
+                <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+              </div>
+              <div class="panel-thumbnails">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <div class="thumbnail">
+                      <img src="http://placemi.com/xhu4d/60x60" />
+                    </div>
                   </div>
-                </div>
-                <div class="col-xs-4">
-                  <div class="thumbnail">
-                    <img src="http://placemi.com/1ijtv/60x60" />
+                  <div class="col-xs-4">
+                    <div class="thumbnail">
+                      <img src="http://placemi.com/1ijtv/60x60" />
+                    </div>
                   </div>
-                </div>
-                <div class="col-xs-4">
-                  <div class="thumbnail">
-                    <img src="http://placemi.com/oaix1/60x60" />
+                  <div class="col-xs-4">
+                    <div class="thumbnail">
+                      <img src="http://placemi.com/oaix1/60x60" />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="panel panel-default panel-card">
-            <div class="panel-heading">
-              <img src="img/background4.jpg" />
-              <button class="btn btn-primary btn-sm" role="button">Follow</button>
-            </div>
-            <div class="panel-figure">
-              <img class="img-responsive img-circle" src="img/profile4.jpeg" />
-            </div>
-            <div class="panel-body text-center">
-              <h4 class="panel-header"><a href="https://twitter.com/">@LoremIpsum</a></h4>
-              <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-            </div>
-            <div class="panel-thumbnails">
-              <div class="row">
-                <div class="col-xs-4">
-                  <div class="thumbnail">
-                    <img src="http://placemi.com/bg53j/60x60" />
+          <div class="col-sm-6 col-md-3">
+            <div class="panel panel-default panel-card">
+              <div class="panel-heading">
+                <img src="img/background4.jpg" />
+                <button class="btn btn-primary btn-sm" role="button">Follow</button>
+              </div>
+              <div class="panel-figure">
+                <img class="img-responsive img-circle" src="img/profile4.jpeg" />
+              </div>
+              <div class="panel-body text-center">
+                <h4 class="panel-header"><a href="https://twitter.com/">@LoremIpsum</a></h4>
+                <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+              </div>
+              <div class="panel-thumbnails">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <div class="thumbnail">
+                      <img src="http://placemi.com/bg53j/60x60" />
+                    </div>
                   </div>
-                </div>
-                <div class="col-xs-4">
-                  <div class="thumbnail">
-                    <img src="http://placemi.com/6u1ao/60x60" />
+                  <div class="col-xs-4">
+                    <div class="thumbnail">
+                      <img src="http://placemi.com/6u1ao/60x60" />
+                    </div>
                   </div>
-                </div>
-                <div class="col-xs-4">
-                  <div class="thumbnail">
-                    <img src="http://placemi.com/sxqtg/60x60" />
+                  <div class="col-xs-4">
+                    <div class="thumbnail">
+                      <img src="http://placemi.com/sxqtg/60x60" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -413,259 +518,269 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!- Contact Section -->
-  <section id="contact" class="contact-section">
+    <!- Contact Section -->
+    <section id="contact" class="contact-section">
 
-    <div id="contactSection" class="container">
-      <div class="row">
-        <h3 class="description">Simplify your networking today!</h3>
-        <div class="col-sm-offset-4 col-sm-4 text-center">
-          <div class="row">
-            <div class="col-xs-4 col-sm-2 col-md-4 col-lg-6 text-center">
-              <a class="btn btn-block btn-social btn-twitter">
-                <span class="fa fa-twitter"></span>Twitter </a>
-
-              <a class="btn btn-block btn-social btn-facebook">
-                <span class="fa fa-facebook"></span>Facebook </a>
-            </div>
+      <div id="contactSection" class="container">
+        <div class="row">
+          <h3 class="description">Simplify your networking today!</h3>
+          <div class="col-sm-offset-4 col-sm-4 text-center">
             <div class="row">
               <div class="col-xs-4 col-sm-2 col-md-4 col-lg-6 text-center">
+                <a class="btn btn-block btn-social btn-twitter">
+                  <span class="fa fa-twitter"></span>Twitter </a>
 
-                <a class="btn btn-block btn-social btn-google">
-                  <span class="fa fa-google"></span>Google </a>
-
-                <a class="btn btn-block btn-social btn-github">
-                  <span class="fa fa-github"></span>GitHub </a>
+                <a class="btn btn-block btn-social btn-facebook">
+                  <span class="fa fa-facebook"></span>Facebook </a>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+              <div class="row">
+                <div class="col-xs-4 col-sm-2 col-md-4 col-lg-6 text-center">
 
-  <!-- Team Section -->
+                  <a class="btn btn-block btn-social btn-google">
+                    <span class="fa fa-google"></span>Google </a>
 
-  <section class="team">
-    <div class="container">
-
-      <h3 class="description">TEAM BIDIRECTIONAL BROADCASTERS</h3>
-      <div class="row pt-md">
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
-          <div class="img-box">
-            <img src="css/vn-prof.jpg" class="img-responsive img-circle">
-            <ul class="text-center">
-              <!--<a href="#">
-                <li><i class="fa fa-facebook"></i></li>
-              </a>
-              <a href="#">
-                <li><i class="fa fa-twitter"></i></li>
-              </a>
-              <a href="#">
-                <li><i class="fa fa-linkedin"></i></li>
-              </a>
-              <a href="#">
-                <li><i class="fa fa-github"></i></li>
-              </a>-->
-            </ul>
-          </div>
-          <h1>Van Leslie Nguyen</h1>
-          <h2>Developer</h2>
-          <p>Van brings positive attitude and motivation to our team every meeting! She makes web development so much less frustrating!</p>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
-          <div class="img-box">
-            <img src="css/nn-prof.jpg" class="img-responsive img-circle">
-            <ul class="text-center">
-              <a href="#">
-                <li><i class="fa fa-facebook"></i></li>
-              </a>
-              <a href="#">
-                <li><i class="fa fa-twitter"></i></li>
-              </a>
-              <a href="#">
-                <li><i class="fa fa-linkedin"></i></li>
-              </a>
-              <a href="#">
-                <li><i class="fa fa-github"></i></li>
-              </a>
-            </ul>
-          </div>
-          <h1>Noor Najjar</h1>
-          <h2>Developer</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
-          <div class="img-box">
-            <img src="css/mb-prof.jpg" class="img-responsive img-circle">
-            <ul class="text-center">
-              <a href="https://www.facebook.com/Nyxora">
-                <li><i class="fa fa-facebook"></i></li>
-              </a>
-              <!--<a href="#">
-                <li><i class="fa fa-twitter"></i></li>
-              </a>
-              <a href="#">
-                <li><i class="fa fa-linkedin"></i></li>
-              </a>-->
-              <a href="https://github.com/Nyxora">
-                <li><i class="fa fa-github"></i></li>
-              </a>
-            </ul>
-          </div>
-          <h1>Megan Bond</h1>
-          <h2>Developer</h2>
-          <p>Megan is a critical part of the team. Making mockups and working on making the website pretty are just a couple of her contributions.</p>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
-          <div class="img-box">
-            <img src="css/sa-prof.jpg" class="img-responsive img-circle">
-            <ul class="text-center">
-              <a href="https://github.com/sasa-us">
-                <li><i class="fa fa-github"></i></li>
-              </a>
-            </ul>
-          </div>
-          <h1>Sha Lu</h1>
-          <h2>Developer</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
-          <div class="img-box">
-            <img src="css/us-prof.jpg" class="img-responsive img-circle">
-            <ul class="text-center">
-              <a href="https://www.facebook.com/udaycshah">
-                <li><i class="fa fa-facebook"></i></li>
-              </a>
-              <a href="https://twitter.com/susshah">
-                <li><i class="fa fa-twitter"></i></li>
-              </a>
-              <a href="https://www.linkedin.com/in/ushah2011">
-                <li><i class="fa fa-linkedin"></i></li>
-              </a>
-              <a href="https://github.com/ushah2011">
-                <li><i class="fa fa-github"></i></li>
-              </a>
-            </ul>
-          </div>
-          <h1>Uday Chandrakant Shah</h1>
-          <h2>Developer</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
-          <div class="img-box">
-            <img src="css/ay-prof.png" class="img-responsive img-circle">
-            <ul class="text-center">
-              <a href="https://www.facebook.com/ammar.y.alee" target="_blank">
-                <li><i class="fa fa-facebook"></i></li>
-              </a>
-              <a href="https://twitter.com/Ammar_Yasir_Ali" target="_blank">
-                <li><i class="fa fa-twitter"></i></li>
-              </a>
-              <a href="https://www.linkedin.com/in/ammaryalee" target="_blank">
-                <li><i class="fa fa-linkedin"></i></li>
-              </a>
-              <a href="https://github.com/ammaralee/" target="_blank">
-                <li><i class="fa fa-github"></i></li>
-              </a>
-            </ul>
-          </div>
-          <h1>Ammar Yasir Ali</h1>
-          <h2>Developer</h2>
-          <p>Ammar is our resident Bootstrapper. He makes the implementation of our website quick and easy!</p>
-        </div>
-      </div>
-    </div>
-    </div>
-    </div>
-    </div>
-  </section>
-  <!-- footer -->
-  <footer role="contentinfo" class="site-footer" id="colophon">
-    <div class="container">
-      <div class="row">
-        <div id="accordion" class="collapse-footer">
-          <div class="panel">
-            <div class="panel-heading">
-              <h4 class="panel-title"> <a href="#collapseOne" data-parent="#accordion" data-toggle="collapse" class="collapsed"> <i class="fa fa-chevron-down" style="color:white"></i></a> </h4>
-            </div>
-            <div class="panel-collapse collapse" id="collapseOne" style="height:0px;">
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-lg-6">
-                    <h5 class="title"><span>Main Navigation</span></h5>
-                    <div class="menu-main-menu-container">
-                      <ul class="nav nav-footer" id="menu-main-menu-1">
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-14 current_page_item menu-item-16"><a href="#">Home</a></li>
-                        <!--<li><a href="#">Blog</a></li>
-                        <li><a href="#">Students</a></li>-->
-                        <li><a href="#contact">About Us</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <!--<li><a href="#">Join Us</a></li>
-                        <li><a href="#">Help</a></li>-->
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                    <h5 class="title"><span>Site map</span></h5>
-                    <div class="menu-footer-sitemap-container">
-                      <ul class="nav nav-footer" id="menu-footer-sitemap">
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87" id="menu-item-87"><a href="#">FAQ</a></li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88" id="menu-item-88"><a href="#">Support</a></li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89" id="menu-item-89"><a href="#">Advertising</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-lg-3  col-sm-6">
-                    <h5 class="title"><span>We're listening!</span></h5>
-                    <p> Please let <strong>Team Bidirectional Broadcasters</strong> know about any problems or suggestions you may have!</p>
-                    <div class="clear"> </div>
-                    <a class="btn btn-default btn-sm" href="#contact">Contact us!</a> </div>
+                  <a class="btn btn-block btn-social btn-github">
+                    <span class="fa fa-github"></span>GitHub </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Copyright -->
-    <div class="copyright">
+    <!-- Team Section -->
+
+    <section class="team">
       <div class="container">
-        <div class="row copyright-img">
-          <div class="col-lg-4 col-sm-4"> Total Control. True Independence. </div>
-          <div class="col-lg-8 col-sm-8 text-right" id="footertext"> Copyright © 2016 Team Bidirectional Broadcasters</div>
+
+        <h3 class="description">TEAM BIDIRECTIONAL BROADCASTERS</h3>
+        <div class="row pt-md">
+          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
+            <div class="img-box">
+              <img src="css/vn-prof.jpg" class="img-responsive img-circle">
+              <ul class="text-center">
+                <!--<a href="#">
+                <li><i class="fa fa-facebook"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-twitter"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-linkedin"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-github"></i></li>
+              </a>-->
+              </ul>
+            </div>
+            <h1>Van Leslie Nguyen</h1>
+            <h2>Developer</h2>
+            <p>Van brings positive attitude and motivation to our team every meeting! She makes web development so much less frustrating!</p>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
+            <div class="img-box">
+              <img src="css/nn-prof.jpg" class="img-responsive img-circle">
+              <ul class="text-center">
+                <a href="#">
+                  <li><i class="fa fa-facebook"></i></li>
+                </a>
+                <a href="#">
+                  <li><i class="fa fa-twitter"></i></li>
+                </a>
+                <a href="#">
+                  <li><i class="fa fa-linkedin"></i></li>
+                </a>
+                <a href="#">
+                  <li><i class="fa fa-github"></i></li>
+                </a>
+              </ul>
+            </div>
+            <h1>Noor Najjar</h1>
+            <h2>Developer</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
+            <div class="img-box">
+              <img src="css/mb-prof.jpg" class="img-responsive img-circle">
+              <ul class="text-center">
+                <a href="https://www.facebook.com/Nyxora">
+                  <li><i class="fa fa-facebook"></i></li>
+                </a>
+                <!--<a href="#">
+                <li><i class="fa fa-twitter"></i></li>
+              </a>
+              <a href="#">
+                <li><i class="fa fa-linkedin"></i></li>
+              </a>-->
+                <a href="https://github.com/Nyxora">
+                  <li><i class="fa fa-github"></i></li>
+                </a>
+              </ul>
+            </div>
+            <h1>Megan Bond</h1>
+            <h2>Developer</h2>
+            <p>Megan is a critical part of the team. Making mockups and working on making the website pretty are just a couple of her contributions.</p>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
+            <div class="img-box">
+              <img src="css/sa-prof.jpg" class="img-responsive img-circle">
+              <ul class="text-center">
+                <a href="https://github.com/sasa-us">
+                  <li><i class="fa fa-github"></i></li>
+                </a>
+              </ul>
+            </div>
+            <h1>Sha Lu</h1>
+            <h2>Developer</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
+            <div class="img-box">
+              <img src="css/us-prof.jpg" class="img-responsive img-circle">
+              <ul class="text-center">
+                <a href="https://www.facebook.com/udaycshah">
+                  <li><i class="fa fa-facebook"></i></li>
+                </a>
+                <a href="https://twitter.com/susshah">
+                  <li><i class="fa fa-twitter"></i></li>
+                </a>
+                <a href="https://www.linkedin.com/in/ushah2011">
+                  <li><i class="fa fa-linkedin"></i></li>
+                </a>
+                <a href="https://github.com/ushah2011">
+                  <li><i class="fa fa-github"></i></li>
+                </a>
+              </ul>
+            </div>
+            <h1>Uday Chandrakant Shah</h1>
+            <h2>Developer</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-8 profile">
+            <div class="img-box">
+              <img src="css/ay-prof.png" class="img-responsive img-circle">
+              <ul class="text-center">
+                <a href="https://www.facebook.com/ammar.y.alee" target="_blank">
+                  <li><i class="fa fa-facebook"></i></li>
+                </a>
+                <a href="https://twitter.com/Ammar_Yasir_Ali" target="_blank">
+                  <li><i class="fa fa-twitter"></i></li>
+                </a>
+                <a href="https://www.linkedin.com/in/ammaryalee" target="_blank">
+                  <li><i class="fa fa-linkedin"></i></li>
+                </a>
+                <a href="https://github.com/ammaralee/" target="_blank">
+                  <li><i class="fa fa-github"></i></li>
+                </a>
+              </ul>
+            </div>
+            <h1>Ammar Yasir Ali</h1>
+            <h2>Developer</h2>
+            <p>Ammar is our resident Bootstrapper. He makes the implementation of our website quick and easy!</p>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- /Copyright -->
+      </div>
+      </div>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer role="contentinfo" class="site-footer" id="colophon">
+      <div class="container">
+        <div class="row">
+          <div id="accordion" class="collapse-footer">
+            <div class="panel">
+              <div class="panel-heading">
+                <h4 class="panel-title"> <a href="#collapseOne" data-parent="#accordion" data-toggle="collapse" class="collapsed"> <i class="fa fa-chevron-down" style="color:white"></i></a> </h4>
+              </div>
+              <div class="panel-collapse collapse" id="collapseOne" style="height:0px;">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <h5 class="title"><span>Main Navigation</span></h5>
+                      <div class="menu-main-menu-container">
+                        <ul class="nav nav-footer" id="menu-main-menu-1">
+                          <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-14 current_page_item menu-item-16"><a href="#">Home</a></li>
+                          <!--<li><a href="#">Blog</a></li>
+                        <li><a href="#">Students</a></li>-->
+                          <li><a href="#contact">About Us</a></li>
+                          <li><a href="#">Terms of Use</a></li>
+                          <li><a href="#">Privacy Policy</a></li>
+                          <!--<li><a href="#">Join Us</a></li>
+                        <li><a href="#">Help</a></li>-->
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                      <h5 class="title"><span>Site map</span></h5>
+                      <div class="menu-footer-sitemap-container">
+                        <ul class="nav nav-footer" id="menu-footer-sitemap">
+                          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87" id="menu-item-87"><a href="#">FAQ</a></li>
+                          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88" id="menu-item-88"><a href="#">Support</a></li>
+                          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89" id="menu-item-89"><a href="#">Advertising</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-3  col-sm-6">
+                      <h5 class="title"><span>We're listening!</span></h5>
+                      <p> Please let <strong>Team Bidirectional Broadcasters</strong> know about any problems or suggestions you may have!</p>
+                      <div class="clear"> </div>
+                      <a class="btn btn-default btn-sm" href="#contact">Contact us!</a> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="copyright">
+        <div class="container">
+          <div class="row copyright-img">
+            <div class="col-lg-4 col-sm-4"> Total Control. True Independence. </div>
+            <div class="col-lg-8 col-sm-8 text-right" id="footertext"> Copyright © 2016 Team Bidirectional Broadcasters</div>
+          </div>
+        </div>
+      </div>
+      <!-- /Copyright -->
 
 
-  </footer>
-  <!-- /footer -->
+    </footer>
+    <!-- /footer -->
 
 
-  <a id="back-to-top" href="#" class="btn btn-primary btn-sm back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    <a id="back-to-top" href="#" class="btn btn-primary btn-sm back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
 
-  <!-- jQuery -->
-  <script src="js/jquery.js"></script>
-  
-  <!-- Functionalities -->
-  <script type="text/javascript" src="js/project1.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
-  <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
+    <!-- Functionalities -->
+    <script type="text/javascript" src="js/project1.js"></script>
 
-  <!-- Scrolling Nav JavaScript -->
-  <script src="js/jquery.easing.min.js"></script>
-  <script src="js/scrolling-nav.js"></script>
-  <script src="js/search.js"></script>
-  <script type="text/javascript" src="js/project1.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+    <script src="js/search.js"></script>
+    <script type="text/javascript" src="js/project1.js"></script>
+    <!-- Include jQuery Popup Overlay -->
+    <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.11/jquery.popupoverlay.js"></script>
+    <!-- JS -->
+    <script>
+      $(document).ready(function() {
+
+        // Initialize the plugin
+        $('#my_popup').popup();
+
+      });
+    </script>
 
 </body>
 

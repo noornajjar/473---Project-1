@@ -2509,7 +2509,6 @@ legend {
 label {
   display: inline-block;
   max-width: 100%;
-  margin-bottom: 5px;
   font-weight: bold;
 }
 input[type="search"] {
@@ -2647,6 +2646,7 @@ input[type="search"] {
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
+  color: black;
 }
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
