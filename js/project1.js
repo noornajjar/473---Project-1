@@ -45,20 +45,36 @@ var main = function () {
     $("#login-nav").submit(function(){
         var $email = $("#exampleInputEmail2").val(),
             $passwd = $("#exampleInputPassword2").val(),
-            url = "http://localhost:3000/users?email=".concat($email, "&password=", $passwd);
+            url = "http://localhost:3000/users/",
+            loginvalid = false;
+            //url = "http://localhost:3000/users?email=".concat($email, "&password=", $passwd);
         console.log("entered login in");
         console.log(url);
-
-        $.get(url, function(data) {
-            console.log("entered get");
-            if(data !== undefined || data.length !== 0){
-                console.log($email);
-                window.location.href = "userpage.html?useremail="+$email;
-            }
-            else {
-                console.log("the password and email do not match");
-            }
-        });
+    	$.get(url, function(users) {
+	        users.forEach(function(user) {
+				if(user.email === email){
+					if (user.password === $passwd) {
+						loginvalid = true;
+					}
+				}
+	        });
+    	});
+    	if (loginvalid) {
+    		window.location.href = "userpage.html?useremail="+$email;
+    	} else {
+    		console.log("the password and email do not match");
+    		alert("Invalid email/password combination!")
+    	}
+        // $.get(url, function(data) {
+        //     console.log("entered get");
+        //     if(data !== undefined || data.length !== 0){
+        //         console.log($email);
+        //         window.location.href = "userpage.html?useremail="+$email;
+        //     }
+        //     else {
+        //         console.log("the password and email do not match");
+        //     }
+        // });
         console.log("email does not exist");
     });// end submit
 
