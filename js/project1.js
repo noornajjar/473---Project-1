@@ -63,6 +63,8 @@ var main = function () {
     });// end submit
 
     $("#singlebutton").on("click", function(){
+        console.log("post");
+        event.preventDefault();
 		var username,
 			userbirthdate,
 			useremail,
@@ -130,12 +132,13 @@ var main = function () {
                 $(".description").text(desc);
                 $('#email').text(email);
                 $("#userphone").append(phone);
-                /*if(gend === "male"){
-                    $("#profile-pic").attr("src","img/male.jpg");
+                console.log(gend);
+                if(gend === "M"){
+                    $("#img").css("backgroundImage", "url('img/male.jpg')");
                 }
                 else {
-                    $("#profile-pic").attr("src","img/female.jpg");
-                }*/
+                    $("#img").css("backgroundImage", "url('img/female.jpg')");
+                }
             }
 		});
 
