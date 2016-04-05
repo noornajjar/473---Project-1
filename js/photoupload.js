@@ -1,5 +1,5 @@
 //code source and instructions on how to work photo upload: http://tonyspiro.com/uploading-resizing-images-fly-node-js-express/
-//getting jquery to work in node.js: http://www.hacksparrow.com/jquery-with-node-js.html
+
 var express = require("express"),
     $ = require('jquery'),
     app = express(),
@@ -12,7 +12,8 @@ var express = require("express"),
 // Use quickthumb
 app.use(qt.static(__dirname + '/'));
 
-app.post('/userpage.html', function (req, res){
+app.post("/userpage.html?useremail=:email", function (req, res){
+    console.log("here");
   var form = new formidable.IncomingForm();
   form.parse(req, function(err, fields, files) {
     res.writeHead(200, {'content-type': 'text/plain'});
@@ -38,4 +39,4 @@ app.post('/userpage.html', function (req, res){
   });
 });
 
-app.listen(3000);
+app.listen(8000);

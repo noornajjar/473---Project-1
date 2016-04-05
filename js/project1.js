@@ -45,22 +45,18 @@ var main = function () {
     $("#login-nav").submit(function(){
         var $email = $("#exampleInputEmail2").val(),
             $passwd = $("#exampleInputPassword2").val(),
-            users = {};
+            url = "http://localhost:3000/users?email=".concat($email, "&password=", $passwd);
         console.log("entered login in");
-        $.get("http://localhost:3000/users", function(data) {
-            Object.assign(users, data);
-        });
-        console.log(users);
-        users.forEach(function (user){
-            if(user.email === $email) {
-                console.log("email validtaed");
-                if (user.password !== $passwd) {
-                    console.log("the password and email do not match");
-                }
-                else {
-                    console.log($email);
-                    window.location.href = "userpage.html?useremail="+$email;
-                }
+        console.log(url);
+
+        $.get(url, function(data) {
+            console.log("entered get");
+            if(data !== undefined || data.length !== 0){
+                console.log($email);
+                window.location.href = "userpage.html?useremail="+$email;
+            }
+            else {
+                console.log("the password and email do not match");
             }
         });
         console.log("email does not exist");
