@@ -9,7 +9,7 @@ var main = function () {
         
             $htmlInsert = $("<article class=\"search-result row\">" +
                             "<div class=\"col-xs-12 col-sm-12 col-md-3\">" + 
-                                "<a href=\"#\" title=\"Lorem ipsum\" class=\"thumbnail\"><img src=" + user.src + " alt=\"Lorem ipsum\" /></a>" +
+                                "<a href=\"userpage.html?useremail=" + user.email + "\" title=\"Lorem ipsum\" class=\"thumbnail\"><img src=" + user.src + " alt=\"Lorem ipsum\" /></a>" +
                             "</div>" + 
                             "<div class=\"col-xs-12 col-sm-12 col-md-2\">" +
                                 "<ul class=\"meta-search\">" +
@@ -23,6 +23,7 @@ var main = function () {
             $(".col-xs-12.col-sm-6.col-md-12").append($htmlInsert);         
         });
     });
+    
 
 };
 $(document).ready(main);
