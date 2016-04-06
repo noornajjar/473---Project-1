@@ -42,44 +42,7 @@ app.listen(8080);*/
 var main = function () {
 	"use strict";
 
-    /*$("#login-nav").submit(function(){
-        var $email = $("#exampleInputEmail2").val(),
-            $passwd = $("#exampleInputPassword2").val(),
-            url = "http://localhost:3000/users/",
-            loginvalid = false;
-            //url = "http://localhost:3000/users?email=".concat($email, "&password=", $passwd);
-        console.log("entered login in");
-        console.log(url);
-    	$.get(url, function(users) {
-	        users.forEach(function(user) {
-				console.log("e: " + user.email);
-				console.log("p:" + user.password);
-				if(user.email === email){
-					if (user.password === $passwd) {
-						loginvalid = true;
-					}
-				}
-	        });
-    	});
-    	if (loginvalid) {
-    		window.location.href = "userpage.html?useremail="+$email;
-    	} else {
-    		console.log("the password and email do not match");
-    		alert("Invalid email/password combination!")
-    	}
-        // $.get(url, function(data) {
-        //     console.log("entered get");
-        //     if(data !== undefined || data.length !== 0){
-        //         console.log($email);
-        //         window.location.href = "userpage.html?useremail="+$email;
-        //     }
-        //     else {
-        //         console.log("the password and email do not match");
-        //     }
-        // });
-        console.log("email does not exist");
-    });// end submit*/
-
+   //submit new user form data
     $("#singlebutton").on("click", function(){
         console.log("post");
         event.preventDefault();
@@ -101,7 +64,30 @@ var main = function () {
 		usergender = $("#txtGender").val();
 		userwebsite = $("#txtWebsite").val();
 		userdescription = $("#txtDescription").val();
-
+		
+		var formData = new FormData($('form')[7]);
+    $.ajax({
+        url: 'http://localhost:8080/upload',  //Server script to process data
+        type: 'POST',
+        /*xhr: function() {  // Custom XMLHttpRequest
+            var myXhr = $.ajaxSettings.xhr();
+            if(myXhr.upload){ // Check if upload property exists
+                myXhr.upload.addEventListener('progress',progressHandlingFunction, false); // For handling the progress of the upload
+            }
+            return myXhr;
+        },*/
+        //Ajax events
+        beforeSend: beforeSendHandler,
+        success: completeHandler,
+        error: errorHandler,
+        // Form data
+        data: formData,
+        //Options to tell jQuery not to process data or worry about content-type.
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+	
 		$.post("http://localhost:3000/users",
         {
             email: useremail,
