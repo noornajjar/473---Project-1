@@ -5,7 +5,7 @@ var main = function () {
 
    //submit new user form data
     $("#singlebutton").on("click", function(){
-        console.log("post");
+
         event.preventDefault();
 		var username,
 			userbirthdate,
@@ -27,9 +27,9 @@ var main = function () {
 		usergender = $("#txtGender").val();
 		userwebsite = $("#txtWebsite").val();
 		userdescription = $("#txtDescription").val();
-        filename = useremail+"."+fileExt;
-		
-        if(filename !== undefined) {
+
+        if(fileExt !== "") {
+            filename = useremail+"."+fileExt;
             photosrc = "img/"+filename;
             var formData = new FormData();
             formData.append('image', $('input[type=file]')[0].files[0]);
@@ -333,7 +333,7 @@ if (email !== "" &&id === -1)
         url: resumeUrl,
         data: newResume,
         success: function(data, status) {
-console.log("post success");
+
         },
         dataType: 'json',
         async: false
