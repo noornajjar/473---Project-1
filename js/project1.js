@@ -42,7 +42,7 @@ app.listen(8080);*/
 var main = function () {
 	"use strict";
 
-    $("#login-nav").submit(function(){
+    /*$("#login-nav").submit(function(){
         var $email = $("#exampleInputEmail2").val(),
             $passwd = $("#exampleInputPassword2").val(),
             url = "http://localhost:3000/users/",
@@ -52,6 +52,8 @@ var main = function () {
         console.log(url);
     	$.get(url, function(users) {
 	        users.forEach(function(user) {
+				console.log("e: " + user.email);
+				console.log("p:" + user.password);
 				if(user.email === email){
 					if (user.password === $passwd) {
 						loginvalid = true;
@@ -76,7 +78,7 @@ var main = function () {
         //     }
         // });
         console.log("email does not exist");
-    });// end submit
+    });// end submit*/
 
     $("#singlebutton").on("click", function(){
         console.log("post");
