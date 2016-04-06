@@ -10,8 +10,22 @@
             "phone": "(555)555-5555",
             "login": "false",
             "src": "img/profile.png",
+            "title": "Web Developer",
             "id": 1
-        }
+        },
+        {
+            "email": "omar@csu.fullerton.edu",
+            "password": "test",
+            "name": "Omar Najjar",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "gender": "male",
+            "dob": "04/15/1991",
+            "phone": "(555)555-5555",
+            "login": "false",
+            "src": "img/profile2.jpg",
+            "title": "IT Manager",
+            "id": 2
+        }        
     ],
     "resumes": [
         {
