@@ -30,6 +30,8 @@ $("#login-in").on("click", function(){
 						loginvalid = true;
 						console.log("in for each");
 						var dest =  window.location.href + "/userpage.html?useremail=" + email;
+						//dest.replace("index.html", "");
+						//dest +=	"/userpage.html?useremail=" + email;
 						console.log("About to redirect to " + dest);
 						console.log(window);
 						window.location.assign(dest);
