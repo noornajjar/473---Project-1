@@ -65,17 +65,17 @@ var main = function () {
 		userwebsite = $("#txtWebsite").val();
 		userdescription = $("#txtDescription").val();
 		
-		var formData = new FormData($('form')[7]);
+	/*var formData = new FormData($('form')[7]);
     $.ajax({
         url: 'http://localhost:8080/upload',  //Server script to process data
         type: 'POST',
-        /*xhr: function() {  // Custom XMLHttpRequest
-            var myXhr = $.ajaxSettings.xhr();
-            if(myXhr.upload){ // Check if upload property exists
-                myXhr.upload.addEventListener('progress',progressHandlingFunction, false); // For handling the progress of the upload
-            }
-            return myXhr;
-        },*/
+        ///xhr: function() {  // Custom XMLHttpRequest
+           // var myXhr = $.ajaxSettings.xhr();
+            //if(myXhr.upload){ // Check if upload property exists
+              //  myXhr.upload.addEventListener('progress',progressHandlingFunction, false); // For handling the progress of the upload
+           // }
+           // return myXhr;
+        //},
         //Ajax events
         beforeSend: beforeSendHandler,
         success: completeHandler,
@@ -86,7 +86,7 @@ var main = function () {
         cache: false,
         contentType: false,
         processData: false
-    });
+    });*/
 	
 		$.post("http://localhost:3000/users",
         {
