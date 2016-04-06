@@ -14,34 +14,40 @@ var main = function () {
 			userphone,
 			usergender,
 			userwebsite,
-			userdescription;
+			userdescription,
+            photosrc,
+            fileExt = $('input[type=file]').val().split(".").pop(),
+            filename;
 		username = $("#txtName").val();
 		userbirthdate = $("#txtBirthDate").val();
 		useremail = $("#txtEmail").val();
 		userpassword = $("#txtPassword").val();
 		userphone = $("#txtPhone").val().replace(/\s+/g, '');
         userphone = ["(", userphone.slice(0,3), ")", userphone.slice(3,6), "-", userphone.slice(6)].join('');
-        console.log(userphone);
 		usergender = $("#txtGender").val();
 		userwebsite = $("#txtWebsite").val();
 		userdescription = $("#txtDescription").val();
+        filename = useremail+"."+fileExt;
 		
-	var formData = new FormData($('form')[8]);
-    $.ajax({
-        url: 'http://localhost:8080/upload',  //Server script to process data
-        type: 'POST',
-        //Ajax events
-        //beforeSend: beforeSendHandler,
-        //success: completeHandler,
-        //error: errorHandler,
-        // Form data
-        data: formData,
-        //Options to tell jQuery not to process data or worry about content-type.
-        cache: false,
-        contentType: false,
-        processData: false
-    });
-	
+        if(filename !== undefined) {
+            photosrc = "img/"+filename;
+            var formData = new FormData();
+            formData.append('image', $('input[type=file]')[0].files[0]);
+
+            $.ajax({
+                url: 'http://localhost:8000/upload?filename='+filename,  //Server script to process data
+                type: 'POST',
+                // Form data
+                data: formData,
+                //Options to tell jQuery not to process data or worry about content-type.
+                contentType: false,
+                processData: false
+            });
+        }
+        else {
+            photosrc = "";
+        }
+        
 		$.post("http://localhost:3000/users",
         {
             email: useremail,
@@ -51,7 +57,8 @@ var main = function () {
             gender : usergender,
             dob : userbirthdate,
             phone : userphone,
-            login: true
+            login: true,
+            src: photosrc
         }, function() {
 				window.location.href = "userpage.html?useremail="+useremail;
         }); //end post /users
@@ -90,12 +97,17 @@ var main = function () {
                 $(".description").text(desc);
                 $('#email').text(email);
                 $("#userphone").append(phone);
-                console.log(gend);
-                if(gend === "M"){
-                    $("#img").css("backgroundImage", "url('img/male.jpg')");
+                
+                if(user.src === "") {
+                    if(gend === "M"){
+                        $("#img").css("backgroundImage", "url('img/male.jpg')");
+                    }
+                    else {
+                        $("#img").css("backgroundImage", "url('img/female.jpg')");
+                    }
                 }
                 else {
-                    $("#img").css("backgroundImage", "url('img/female.jpg')");
+                    $("#img").css("backgroundImage", "url('"+user.src+"')");
                 }
             }
 		});
@@ -207,7 +219,7 @@ var main = function () {
                 skillC = resume.skill3title;
                 skillCdescrip = resume.skill3description;
                 id = resume.id;
-console.log("first get id:", id);
+
 
                 $("#job1 .jobtitle h3 div").text(compA);
                 $("#job1 .jobtitle h4 div").text(compAtitle);
@@ -280,7 +292,7 @@ if (email !== "" &&id === -1)
         url: strUrl,
         success: function(data) {
             dbLength = data.length;
-console.log("inside if statement id == -1: dbLength=", dbLength);
+
         },
         async: false
     });
@@ -315,8 +327,6 @@ console.log("inside if statement id == -1: dbLength=", dbLength);
         "id": dbLength
     };
 
-    console.log(email);
-
     var resumeUrl = "http://localhost:3000/resumes";
     $.ajax({
         type: 'POST',
@@ -331,7 +341,7 @@ console.log("post success");
 }//end if
 //=========================== end post resume =====================================
 
-console.log("outside if id==-1 statement, id=", id);
+
 
         $(".editR").on("click", function(){
             $orgTxt=$(".resumeEdit").text();
@@ -342,7 +352,7 @@ console.log("outside if id==-1 statement, id=", id);
 
 
         $('.saveR').on('click', function(){
-console.log("new resume id is", id);
+
             $NEWcompA =  $("#job1 .jobtitle h3 div").text();
             $NEWcompAtitle = $("#job1 .jobtitle h4 div").text();
             $NEWcompAdFrom = $("#job1 .datefrom .resumeEdit").text();
