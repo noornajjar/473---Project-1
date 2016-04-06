@@ -28,11 +28,43 @@ $("#login-in").on("click", function(){
 			 if(JSON.stringify(user.email) === JSON.stringify(email)){
 					if (JSON.stringify(user.password) === JSON.stringify(passwd)) {
 						loginvalid = true;
-						console.log("in for each");
 						var dest =  window.location.origin + "/userpage.html?useremail=" + email;
+						console.log("in for each");
+						//change login param in DB
+						var putUrl = "http://localhost:3000/users/"+user.id.toString();
+						$.ajax({
+						type:"PUT",
+						url:"http://localhost:3000/users/"+user.id.toString(),
+						dataType: "json",
+						data:JSON.stringify({
+							email: user.email,
+                            name: user.name,
+                            password: user.password,
+                            description: user.description,
+                            gender: user.gender,
+                            dob: user.dob,
+                            phone: user.phone,
+                            login: true,
+                            id: user.id
+                        }),
+						contentType: "application/json",
+						success: function(){
+						console.log("in put function");
+						window.location.assign(dest);
+						return;
+						}
+						});
+				/*		$.ajax(putUrl,
+						{
+						login: true
+						}, function() {
+							console.log("in post function");
+						window.location.assign(dest);
+						});*/
+						//var dest =  window.location.origin + "/userpage.html?useremail=" + email;
 						console.log("About to redirect to " + dest);
 						console.log(window);
-						window.location.assign(dest);
+						//window.location.assign(dest);
 						//break;
 						return;
 					}
