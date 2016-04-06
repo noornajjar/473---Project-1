@@ -2,7 +2,14 @@
 
 var main = function () {
 	"use strict";
-
+    
+    //clicked on search button
+    $(".glyphicon.glyphicon-search").on("click", function(){
+        
+        window.location.href = "search.html";
+    
+    });
+    
    //submit new user form data
     $("#singlebutton").on("click", function(){
 
