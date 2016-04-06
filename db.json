@@ -25,7 +25,20 @@
             "src": "img/profile2.jpg",
             "title": "IT Manager",
             "id": 2
-        }        
+        },
+        {
+            "email": "test@fullerton.com",
+            "password": "test",
+            "name": "Test User",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "gender": "male",
+            "dob": "04/03/1981",
+            "phone": "(555)555-5555",
+            "login": "false",
+            "src": "img/rsz_flex2.jpg",
+            "title": "Designer",
+            "id": 3
+        }  
     ],
     "resumes": [
         {
