@@ -13,14 +13,14 @@ var express = require("express"),
 app.use(qt.static(__dirname + '/'));
 
 app.post("/upload*", function (req, res){
-    console.log(req.param('filename'));
+
   var form = new formidable.IncomingForm();
   form.parse(req, function(err, fields, files) {
     res.writeHead(200, {'content-type': 'text/plain'});
     res.write('received upload:\n\n');
     res.end(util.inspect({fields: fields, files: files}));
   });
-console.log("test");
+
   form.on('end', function(fields, files) {
     // Temporary location of our uploaded file 
     var temp_path = this.openedFiles[0].path;
