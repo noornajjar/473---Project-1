@@ -12,7 +12,7 @@ var express = require("express"),
 // Use quickthumb
 app.use(qt.static(__dirname + '/'));
 
-app.post("/userpage.html?useremail=:email", function (req, res){
+app.post("/upload", function (req, res){
     console.log("here");
   var form = new formidable.IncomingForm();
   form.parse(req, function(err, fields, files) {
