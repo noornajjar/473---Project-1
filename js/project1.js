@@ -1,4 +1,8 @@
+// Client-side code
+/* jshint browser: true, jquery: true, curly: true, eqeqeq: true, forin: true, immed: true, indent: 4, latedef: true, newcap: true, nonew: true, quotmark: double, undef: true, unused: true, strict: true, trailing: true */
 
+// Server-side code
+/* jshint node: true, curly: true, eqeqeq: true, forin: true, immed: true, indent: 4, latedef: true, newcap: true, nonew: true, quotmark: double, undef: true, unused: true, strict: true, trailing: true */
 
 var main = function () {
 	"use strict";
@@ -23,14 +27,14 @@ var main = function () {
 			userwebsite,
 			userdescription,
             photosrc,
-            fileExt = $('input[type=file]').val().split(".").pop(),
+            fileExt = $("input[type=file]").val().split(".").pop(),
             filename;
 		username = $("#txtName").val();
 		userbirthdate = $("#txtBirthDate").val();
 		useremail = $("#txtEmail").val();
 		userpassword = $("#txtPassword").val();
-		userphone = $("#txtPhone").val().replace(/\s+/g, '');
-        userphone = ["(", userphone.slice(0,3), ")", userphone.slice(3,6), "-", userphone.slice(6)].join('');
+		userphone = $("#txtPhone").val().replace(/\s+/g, "");
+        userphone = ["(", userphone.slice(0,3), ")", userphone.slice(3,6), "-", userphone.slice(6)].join("");
 		usergender = $("#txtGender").val();
 		userwebsite = $("#txtWebsite").val();
 		userdescription = $("#txtDescription").val();
@@ -39,11 +43,11 @@ var main = function () {
             filename = useremail+"."+fileExt;
             photosrc = "img/"+filename;
             var formData = new FormData();
-            formData.append('image', $('input[type=file]')[0].files[0]);
+            formData.append("image", $("input[type=file]")[0].files[0]);
 
             $.ajax({
-                url: 'http://localhost:8000/upload?filename='+filename,  //Server script to process data
-                type: 'POST',
+                url: "http://localhost:8000/upload?filename="+filename,  //Server script to process data
+                type: "POST",
                 // Form data
                 data: formData,
                 //Options to tell jQuery not to process data or worry about content-type.
@@ -74,9 +78,7 @@ var main = function () {
 	});	// end singlebutton
 
     $.get("http://localhost:3000/users/", function(users) {
-        var $insertName,
-			$insertDescription,
-            email,
+        var email,
             name,
             psswd,
             desc,
@@ -102,7 +104,7 @@ var main = function () {
 
                 $(".name").text(name);
                 $(".description").text(desc);
-                $('#email').text(email);
+                $("#email").text(email);
                 $("#userphone").append(phone);
                 
                 if(user.src === "") {
@@ -129,8 +131,8 @@ var main = function () {
             $(".save, .cancel").removeClass("hide");
         });
 
-        $('.save').on('click', function(){
-            $newTxt=$('.description').text();
+        $(".save").on("click", function(){
+            $newTxt=$(".description").text();
             //add code to PUT to json
             $.ajax({
                 type:"PUT",
@@ -148,18 +150,18 @@ var main = function () {
                                   }),
                 contentType: "application/json"
             });
-            $('.description').removeClass('editable').prop('contenteditable',false);
-            $('.save, .cancel').addClass('hide');
-            $('.edit').removeClass('hide');
+            $(".description").removeClass("editable").prop("contenteditable",false);
+            $(".save, .cancel").addClass("hide");
+            $(".edit").removeClass("hide");
 
         });
 
-        $('.cancel').on('click', function(){
+        $(".cancel").on("click", function(){
 
-            $('.description').text($orgTxt);
-            $('.description').removeClass('editable').prop('contenteditable',false);
-            $('.save, .cancel').addClass('hide');
-            $('.edit').removeClass('hide');
+            $(".description").text($orgTxt);
+            $(".description").removeClass("editable").prop("contenteditable",false);
+            $(".save, .cancel").addClass("hide");
+            $(".edit").removeClass("hide");
         });
      });// end .get (users)
 
@@ -295,7 +297,7 @@ if (email !== "" &&id === -1)
     var strUrl = "http://localhost:3000/users";
     //var dbLength;
     jQuery.ajax({
-        type: 'GET',
+        type: "GET",
         url: strUrl,
         success: function(data) {
             dbLength = data.length;
@@ -336,13 +338,11 @@ if (email !== "" &&id === -1)
 
     var resumeUrl = "http://localhost:3000/resumes";
     $.ajax({
-        type: 'POST',
+        type: "POST",
         url: resumeUrl,
         data: newResume,
-        success: function(data, status) {
-
-        },
-        dataType: 'json',
+        success: function() {},
+        dataType: "json",
         async: false
     });
 }//end if
@@ -358,7 +358,7 @@ if (email !== "" &&id === -1)
         });
 
 
-        $('.saveR').on('click', function(){
+        $(".saveR").on("click", function(){
 
             $NEWcompA =  $("#job1 .jobtitle h3 div").text();
             $NEWcompAtitle = $("#job1 .jobtitle h4 div").text();
@@ -425,17 +425,17 @@ if (email !== "" &&id === -1)
                   contentType: "application/json"
             });
 console.log("updated 1st newCompany is:",  $NEWcompA);
-            $('.resumeEdit').removeClass('editable').prop('contenteditable',false);
-            $('.saveR, .cancelR').addClass('hide');
-            $('.editR').removeClass('hide');
+            $(".resumeEdit").removeClass("editable").prop("contenteditable",false);
+            $(".saveR, .cancelR").addClass("hide");
+            $(".editR").removeClass("hide");
         });
 
 
-        $('.cancelR').on('click', function(){
-            $('.resumeEdit').text($orgTxt);
-            $('.resumeEdit').removeClass('editable').prop('contenteditable',false);
-            $('.saveR, .cancelR').addClass('hide');
-            $('.editR').removeClass('hide');
+        $(".cancelR").on("click", function(){
+            $(".resumeEdit").text($orgTxt);
+            $(".resumeEdit").removeClass("editable").prop("contenteditable",false);
+            $(".saveR, .cancelR").addClass("hide");
+            $(".editR").removeClass("hide");
         });
 
     });// end .get (resumes)
