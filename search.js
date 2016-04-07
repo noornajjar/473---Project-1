@@ -4,8 +4,9 @@ var main = function () {
     $.get("http://localhost:3000/users/", function(users) {
         
         var $htmlInsert,
+            $numOfResult = 0,
             randomUsers = _.shuffle(users);
-        
+            
         randomUsers.forEach(function(user) {
             
             $htmlInsert = $("<article class=\"search-result row\">" +
@@ -21,8 +22,12 @@ var main = function () {
                             "<span class=\"clearfix borda\"></span>" +
                         "</article>");
             
-            $(".col-xs-12.col-sm-6.col-md-12").append($htmlInsert);         
+            $(".col-xs-12.col-sm-6.col-md-12").append($htmlInsert); 
+
+            $numOfResult += 1;
         });
+        
+        $("#resultNum").text($numOfResult);
     });
     
 
