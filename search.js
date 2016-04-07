@@ -3,10 +3,11 @@ var main = function () {
     
     $.get("http://localhost:3000/users/", function(users) {
         
-        var $htmlInsert;
+        var $htmlInsert,
+            randomUsers = _.shuffle(users);
         
-        users.forEach(function(user) {
-        
+        randomUsers.forEach(function(user) {
+            
             $htmlInsert = $("<article class=\"search-result row\">" +
                             "<div class=\"col-xs-12 col-sm-12 col-md-3\">" + 
                                 "<a href=\"userpage.html?useremail=" + user.email + "\" title=\"Lorem ipsum\" class=\"thumbnail\"><img src=" + user.src + " alt=\"Lorem ipsum\" /></a>" +
